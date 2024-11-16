@@ -1,7 +1,7 @@
 # Know_It_All
 
 1. Clone the project
-2. Create Python virtual environment
+2. Create Python virtual environment and activate it
 3. Install requirements with "pip install -r requirements.txt"
 4. Create ".env" file with the keys from "example.env"
 5. Migrate Django database tables with "python manage.py migrate"
