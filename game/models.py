@@ -33,5 +33,3 @@ class Game(models.Model):
 
     def __str__(self):
         return f"{self.category} - {self.difficulty} - {self.user}"
-
-
