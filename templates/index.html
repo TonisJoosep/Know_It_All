@@ -1,12 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Know_It_All</title>
-</head>
+  <title>Know_It_All</title>
+  <link rel="stylesheet" href="style.css">  </head>
 <body>
+  <header>
+    <div class="container">
+      <img src="logo.png" alt="Trivia Game Logo" id="logo">
+      <a href="{% url 'login' %}" id="login-button">Login</a>
+    </div>
+  </header>
 
-Tüdrukud kirjutage siia
+  <main>
+    <div class="container">
+      <h1>WELCOME TO</h1>
+      <img src="logo.png" alt="Trivia Game Logo" id="main-logo">
 
+        <h2>Choose topic</h2>
+        <div class="category-grid">
+            {% for category_name in categories %}
+                <a href="{% url 'options' category_name %}">
+                    <div class="category-box">
+                        {{ category_name }}
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy</a>
+    </div>
+  </footer>
 </body>
 </html>

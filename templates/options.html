@@ -1,12 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Settings</title>
-</head>
-<body>
+{# templates/options.html #}
+<h2>{{ category_name }} Options</h2>
 
-tehke oma imesi
+<form method="get" action="{% url 'game' %}">
+  {% if subcategories %}
+  <label for="subcategory">Subcategory:</label>
+  <select name="subcategory" id="subcategory">
+    {% for subcategory_name, subcategory_id in subcategories.items %}
+      <option value="{{ subcategory_name }}">{{ subcategory_name }}</option>
+    {% endfor %}
+  </select>
+  {% endif %}
 
-</body>
-</html>
+  <input type="hidden" name="category" value="{{ category_name }}">
+
+  <label for="difficulty">Difficulty:</label>
+  <select name="difficulty" id="difficulty">
+    {% for choice in difficulty_choices %}
+      <option value="{{ choice }}">{{ choice }}</option>
+    {% endfor %}
+  </select>
+
+  <label for="type">Type:</label>
+  <select name="type" id="type">
+    {% for choice in type_choices %}
+      <option value="{{ choice }}">{{ choice }}</option>
+    {% endfor %}
+  </select>
+
+  <button type="submit">Start Game</button>
+</form>

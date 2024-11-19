@@ -23,6 +23,6 @@ urlpatterns = [
     path("", include("game.urls")),
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('options/', views.options, name='options'),
+    path('options/<str:category_name>/', views.options, name='options'),
     path('login/', views.login, name='login'),
 ]
