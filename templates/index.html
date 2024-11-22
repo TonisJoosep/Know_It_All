@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-api-new1
   <title>Know_It_All</title>
-  <link rel="stylesheet" href="style.css">  </head>
+</head>
 <body>
   <header>
     <div class="container">
       <img src="logo.png" alt="Trivia Game Logo" id="logo">
+        <br>
       <a href="{% url 'login' %}" id="login-button">Login</a>
     </div>
   </header>
@@ -17,7 +17,7 @@ api-new1
       <h1>WELCOME TO</h1>
       <img src="logo.png" alt="Trivia Game Logo" id="main-logo">
 
-        <h2>Choose topic</h2>
+        <h2>Choose topic:</h2>
         <div class="category-grid">
             {% for category_name in categories %}
                 <a href="{% url 'options' category_name %}">
