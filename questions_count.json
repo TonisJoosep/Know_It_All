@@ -1,0 +1,150 @@
+{
+    "General Knowledge": {
+        "easy": 128,
+        "medium": 124,
+        "hard": 61,
+        "total": 313
+    },
+    "Entertainment": {
+        "Books": {
+            "easy": 31,
+            "medium": 41,
+            "hard": 27,
+            "total": 99
+        },
+        "Film": {
+            "easy": 89,
+            "medium": 119,
+            "hard": 43,
+            "total": 251
+        },
+        "Music": {
+            "easy": 109,
+            "medium": 188,
+            "hard": 69,
+            "total": 366
+        },
+        "Musicals & Theatres": {
+            "easy": 9,
+            "medium": 13,
+            "hard": 10,
+            "total": 32
+        },
+        "Television": {
+            "easy": 69,
+            "medium": 72,
+            "hard": 29,
+            "total": 170
+        },
+        "Video Games": {
+            "easy": 330,
+            "medium": 448,
+            "hard": 195,
+            "total": 973
+        },
+        "Board Games": {
+            "easy": 19,
+            "medium": 15,
+            "hard": 25,
+            "total": 59
+        },
+        "Comics": {
+            "easy": 15,
+            "medium": 34,
+            "hard": 19,
+            "total": 68
+        },
+        "Japanese Anime & Manga": {
+            "easy": 58,
+            "medium": 80,
+            "hard": 46,
+            "total": 184
+        },
+        "Cartoon & Animations": {
+            "easy": 31,
+            "medium": 41,
+            "hard": 17,
+            "total": 89
+        }
+    },
+    "Science": {
+        "Nature": {
+            "easy": 61,
+            "medium": 100,
+            "hard": 69,
+            "total": 230
+        },
+        "Computers": {
+            "easy": 48,
+            "medium": 74,
+            "hard": 37,
+            "total": 159
+        },
+        "Mathematics": {
+            "easy": 14,
+            "medium": 24,
+            "hard": 17,
+            "total": 55
+        },
+        "Gadgets": {
+            "easy": 14,
+            "medium": 10,
+            "hard": 5,
+            "total": 29
+        }
+    },
+    "Mythology": {
+        "easy": 19,
+        "medium": 26,
+        "hard": 13,
+        "total": 58
+    },
+    "Sports": {
+        "easy": 48,
+        "medium": 65,
+        "hard": 20,
+        "total": 133
+    },
+    "Geography": {
+        "easy": 80,
+        "medium": 139,
+        "hard": 56,
+        "total": 275
+    },
+    "History": {
+        "easy": 68,
+        "medium": 166,
+        "hard": 80,
+        "total": 314
+    },
+    "Politics": {
+        "easy": 18,
+        "medium": 26,
+        "hard": 15,
+        "total": 59
+    },
+    "Art": {
+        "easy": 13,
+        "medium": 11,
+        "hard": 9,
+        "total": 33
+    },
+    "Celebrities": {
+        "easy": 13,
+        "medium": 31,
+        "hard": 8,
+        "total": 52
+    },
+    "Animals": {
+        "easy": 28,
+        "medium": 30,
+        "hard": 18,
+        "total": 76
+    },
+    "Vehicles": {
+        "easy": 21,
+        "medium": 32,
+        "hard": 18,
+        "total": 71
+    }
+}

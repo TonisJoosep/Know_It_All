@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trivia Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Trivia Game</h1>
+
+<div id="question-container">
+  <div class="question" data-question-index="0"> </div>
+
+  <button id="next-button" style="display: none;">Next Question</button>
+</div>
+
+<div id="results-container" style="display: none;">
+  <h2>Results</h2>
+  <p>Your score: <span id="score"></span></p>
+</div>
+
+<script>
+  const questions = {{ questions|safe }}; // Pass questions from Django context
+  let currentQuestionIndex = 0;
+  let score = 0;
+
+  const questionContainer = document.getElementById('question-container');
+  const nextButton = document.getElementById('next-button');
+  const resultsContainer = document.getElementById('results-container');
+  const scoreSpan = document.getElementById('score');
+
+  function showQuestion(index) {
+    const questionData = questions[index];
+    const questionDiv = document.querySelector('.question');
+
+    // Create question HTML
+    let questionHtml = `<h3>${questionData.question}</h3><ul>`;
+    const answers = [...questionData.incorrect_answers, questionData.correct_answer];
+
+    // Ensure 'True' is always the first option and 'False' is the last
+
+
+    answers.forEach(answer => {
+      questionHtml += `<li><input type="radio" name="answer" value="${answer}"> ${answer}</li>`;
+    });
+    questionHtml += '</ul>';
+    questionDiv.innerHTML = questionHtml;
+
+    // Show the "Next Question" button
+    nextButton.style.display = 'block';
+  }
+
+  nextButton.addEventListener('click', () => {
+    const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+    if (selectedAnswer) {
+      if (selectedAnswer.value === questions[currentQuestionIndex].correct_answer) {
+        score++;
+      }
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        showQuestion(currentQuestionIndex);
+      } else {
+        // Show results
+        scoreSpan.textContent = score;
+        questionContainer.style.display = 'none';
+        resultsContainer.style.display = 'block';
+      }
+    } else {
+      // Handle case where no answer is selected
+      alert("Please select an answer.");
+    }
+  });
+
+  // Show the first question initially
+  showQuestion(currentQuestionIndex);
+</script>
+
+</body>
+</html>

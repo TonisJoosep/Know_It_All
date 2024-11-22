@@ -1,30 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Know_It_All</title>
-</head>
-
+api-new1
+  <title>Know_It_All</title>
+  <link rel="stylesheet" href="style.css">  </head>
 <body>
-<p>SIIA TULEB LOGO</p>
-<button>Login</button>
-<h1>WELCOME TO</h1>
-<p>SIIA TULEB LOGO</p>
-<h4>Choose topic:</h4>
-<p>General knowledge</p>
-<p>Entertainment</p>
-<p>Science</p>
-<p>Mythology</p>
-<p>Sports</p>
-<p>Geography</p>
-<p>History</p>
-<p>Politics</p>
-<p>Art</p>
-<p>Celebrities</p>
-<p>Animals</p>
-<p>Vehicles</p>
-<button>About</button>
-<button>Contact</button>
-<button>Privacy</button>
-</body>
-</html>
+  <header>
+    <div class="container">
+      <img src="logo.png" alt="Trivia Game Logo" id="logo">
+      <a href="{% url 'login' %}" id="login-button">Login</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1>WELCOME TO</h1>
+      <img src="logo.png" alt="Trivia Game Logo" id="main-logo">
+
+        <h2>Choose topic</h2>
+        <div class="category-grid">
+            {% for category_name in categories %}
+                <a href="{% url 'options' category_name %}">
+                    <div class="category-box">
+                        {{ category_name }}
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy</a>
+    </div>
+  </footer>
