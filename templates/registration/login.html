@@ -7,26 +7,29 @@
 <body>
 <button>Logo</button>
 <h2>Login</h2>
-<form method="post">
+<form method="post" action="{% url 'login' %}">
     {% csrf_token %}
     {{ form.as_p }}
     {% if form.errors %}
-        <div class="error">
-            <ul>
-                {% for field in form %}
-                    {% for error in field.errors %}
-                        <li>{{ error }}</li>
-                    {% endfor %}
-                {% endfor %}
-            </ul>
-        </div>
+    <div class="error">
+    <ul>
+        {% for error in form.non_field_errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+        {% for field in form %}
+            {% for error in field.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        {% endfor %}
+    </div>
     {% endif %}
     <button type="submit">Login</button>
 </form>
 <br>
 <div>Forgot password?</div>
 <a href="{% url 'forgot_password' %}">Reset Password</a>
-<h3><b>New to Know_It_All?</b></h3>
+<h3>New to Know_It_All?</h3>
 <div>
     <a href="{% url 'signup' %}">Create a free account now!</a>
 </div>
