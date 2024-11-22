@@ -5,6 +5,23 @@
     <title>Login or Signup</title>
 </head>
 <body>
-siia tuleb sisselogimise vorm
+<button>Logo</button>
+<h2>Login</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+</form>
+<br>
+<div>Forgot password?</div>
+<a href="{% url 'forgot_password' %}">Reset Password</a>
+<h3><b>New to Know_It_All?</b></h3>
+<div>
+    <a href="{% url 'signup' %}">Create a free account now!</a>
+</div>
+<br>
+<button>About</button>
+<button>Contact</button>
+<button>Privacy</button>
 </body>
 </html>
