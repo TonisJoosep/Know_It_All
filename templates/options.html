@@ -2,7 +2,7 @@
 <h2>{{ category_name }} Options</h2>
 
 <form method="get" action="{% url 'game' %}">
-  {% if subcategories %}
+  {% if subcategories and subcategories|length > 0 %}
   <label for="subcategory">Subcategory:</label>
   <select name="subcategory" id="subcategory">
     {% for subcategory_name, subcategory_id in subcategories.items %}
