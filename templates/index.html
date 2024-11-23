@@ -1,53 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Know_It_All</title>
-</head>
-<body>
-  <header>
-    <div class="container">
-      <img src="/static/logo.png" alt="Trivia Game Logo" id="logo">
-        <br>
-        {% if user.is_authenticated %}
-            <p>Welcome, {{ user.username }}!</p>
-            <form method="post" action="{% url 'logout' %}">
-        {% csrf_token %}
-            <button type="submit" id="logout-button">Logout</button>
-        </form>
-        
-        {% else %}
-        <form method="post" action="{% url 'login' %}">
-        {% csrf_token %}
-            <button type="submit" id="login-button">Login</button>
-        </form>
-        {% endif %}
-    </div>
-  </header>
+{% extends 'base.html' %}
 
-  <main>
-    <div class="container">
-      <h1>WELCOME TO</h1>
-      <img src="logo.png" alt="Trivia Game Logo" id="main-logo">
+{% block title %}Welcome - Know_It_All{% endblock %}
 
-        <h2>Choose topic:</h2>
-        <div class="category-grid">
-            {% for category_name in categories %}
-                <a href="{% url 'options' category_name %}">
-                    <div class="category-box">
-                        {{ category_name }}
-                    </div>
-                </a>
-            {% endfor %}
-        </div>
-    </div>
-  </main>
+{% block content %}
+<div class="container">
+    <h1>WELCOME TO</h1>
+    <img src="/static/logo.png" alt="Trivia Game Logo" id="main-logo">
 
-  <footer>
-    <div class="container">
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-      <a href="#">Privacy</a>
+    <h2>Choose topic:</h2>
+    <div class="category-grid">
+        {% for category_name in categories %}
+            <a href="{% url 'options' category_name %}">
+                <div class="category-box">
+                    {{ category_name }}
+                </div>
+            </a>
+        {% endfor %}
     </div>
-  </footer>
-</body>
-</html>
+</div>
+{% endblock %}
