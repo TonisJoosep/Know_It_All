@@ -42,7 +42,7 @@
 
             // Create question HTML
             let questionHtml = `<h3>${questionData.question}</h3><ul>`;
-            const answers = [...questionData.incorrect_answers, questionData.correct_answer];
+            const answers = questionData.shuffled_answers;
 
             // Ensure 'True' is always the first option and 'False' is the last
 
