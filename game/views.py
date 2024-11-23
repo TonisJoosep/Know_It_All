@@ -1,10 +1,15 @@
+from ftplib import all_errors
+
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import LoginForm
-from api import get_questions, MAIN_CATEGORIES, get_main_categories, get_subcategories  # Impordib vajalikud funktsioonid api.py failist
+from .api.APIClient import get_questions
+from .api.Category import MAIN_CATEGORIES, get_main_categories, get_subcategories
+import random
+
 
 def index(request):
     """
@@ -43,7 +48,12 @@ api-new1
     category_name = request.GET.get('category')  # Saab peakategooria nime päringu parameetritest
     subcategory_name = request.GET.get('subcategory')  # Saab alamkategooria nime päringu parameetritest
     difficulty = request.GET.get('difficulty')  # Saab raskusastme päringu parameetritest
-    type = request.GET.get('type')  # Saab küsimuse tüübi päringu parameetritest
+    amount = request.GET.get('amount')  # Saab küsimuste arvu päringu parameetritest
+
+    if amount is None:
+        amount = 10 # kasutab vaikeväärtusena 10 küsimust
+    else :
+        amount = int(amount) # muudab küsimuste arvu täisarvuks
 
     if subcategory_name:
         # Kui alamkategooria on valitud, saab selle ID MAIN_CATEGORIES sõnastikust
@@ -53,13 +63,16 @@ api-new1
         category_id = MAIN_CATEGORIES.get(category_name)
 
     questions = get_questions(  # Tõmbab küsimused API-st, kasutades get_questions() funktsiooni
-        amount=15,
+        amount=amount,
         category=category_id,
         difficulty=difficulty,
-        type=type
     )
 
     if questions:
+        for question in questions:
+            all_answers = question['incorrect_answers'] + [question['correct_answer']]
+            random.shuffle(all_answers)
+            question['shuffled_answers'] = all_answers
         # Kui küsimused on edukalt tõmmatud, renderdatakse game.html mall koos küsimustega
         context = {'questions': questions}
         return render(request, 'game.html', context)
