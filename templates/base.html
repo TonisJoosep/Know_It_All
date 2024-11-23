@@ -6,36 +6,38 @@
     <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
-  <header>
+<header>
     <div class="container">
-      <img src="/static/logo.png" alt="Trivia Game Logo" id="logo">
-      <br>
-      {% if user.is_authenticated %}
-        <p>Welcome, {{ user.username }}!</p>
-        <form method="post" action="{% url 'logout' %}">
-          {% csrf_token %}
-          <button type="submit" id="logout-button">Logout</button>
-        </form>
-      {% else %}
-        <form method="post" action="{% url 'login' %}">
-          {% csrf_token %}
-          <button type="submit" id="login-button">Login</button>
-        </form>
-      {% endif %}
+        <a href="{% url 'index' %}">
+            <img src="/static/logo.png" alt="Trivia Game Logo" id="logo">
+        </a>
+        <br>
+        {% if user.is_authenticated %}
+            <p>Welcome, {{ user.username }}!</p>
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" id="logout-button">Logout</button>
+            </form>
+        {% else %}
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <button type="submit" id="login-button">Login</button>
+            </form>
+        {% endif %}
     </div>
-  </header>
+</header>
 
-  <main>
+<main>
     {% block content %}
     {% endblock %}
-  </main>
+</main>
 
-  <footer>
+<footer>
     <div class="container">
-      <a href="{% url 'about' %}">About</a>
-      <a href="{% url 'contact' %}">Contact</a>
-      <a href="{% url 'privacy' %}">Privacy</a>
+        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'contact' %}">Contact</a>
+        <a href="{% url 'privacy' %}">Privacy</a>
     </div>
-  </footer>
+</footer>
 </body>
 </html>

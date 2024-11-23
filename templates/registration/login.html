@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login or Signup</title>
-</head>
+{% extends 'base.html' %}
+
+{% block title %}Welcome - Know_It_All{% endblock %}
+
+{% block content %}
 <body>
 <button>Logo</button>
 <h2>Login</h2>
@@ -33,9 +32,5 @@
 <div>
     <a href="{% url 'signup' %}">Create a free account now!</a>
 </div>
-<br>
-<button>About</button>
-<button>Contact</button>
-<button>Privacy</button>
 </body>
-</html>
+{% endblock %}

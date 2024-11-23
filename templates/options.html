@@ -1,27 +1,30 @@
-{# templates/options.html #}
-<h2>{{ category_name }} Options</h2>
+{% extends 'base.html' %}
 
-<form method="get" action="{% url 'game' %}">
-  {% if subcategories and subcategories|length > 0 %}
-  <label for="subcategory">Subcategory:</label>
-  <select name="subcategory" id="subcategory">
-    {% for subcategory_name, subcategory_id in subcategories.items %}
-      <option value="{{ subcategory_name }}">{{ subcategory_name }}</option>
-    {% endfor %}
-  </select>
-  {% endif %}
+{% block title %}Welcome - Know_It_All{% endblock %}
 
-  <input type="hidden" name="category" value="{{ category_name }}">
+{% block content %}
+    <h2>{{ category_name }} Options</h2>
 
-  <label for="difficulty">Difficulty:</label>
-  <select name="difficulty" id="difficulty">
-    {% for choice in difficulty_choices %}
-      <option value="{{ choice }}">{{ choice }}</option>
-    {% endfor %}
-  </select>
+    <form method="get" action="{% url 'game' %}">
+        {% if subcategories and subcategories|length > 0 %}
+            <label for="subcategory">Subcategory:</label>
+            <select name="subcategory" id="subcategory">
+                {% for subcategory_name, subcategory_id in subcategories.items %}
+                    <option value="{{ subcategory_name }}">{{ subcategory_name }}</option>
+                {% endfor %}
+            </select>
+        {% endif %}
+
+        <input type="hidden" name="category" value="{{ category_name }}">
+
+        <label for="difficulty">Difficulty:</label>
+        <select name="difficulty" id="difficulty">
+            {% for choice in difficulty_choices %}
+                <option value="{{ choice }}">{{ choice }}</option>
+            {% endfor %}
+        </select>
 
 
-
-  <button type="submit">Start Game</button>
-</form>
-
+        <button type="submit">Start Game</button>
+    </form>
+{% endblock %}

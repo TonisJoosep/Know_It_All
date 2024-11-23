@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Signup</title>
-</head>
+{% extends 'base.html' %}
+
+{% block title %}Welcome - Know_It_All{% endblock %}
+
+{% block content %}
 <body>
 <div><b>LOGO</b></div>
 <form class="signup-form" action="/register/" method="POST">
@@ -22,10 +21,5 @@
     
     <button type="submit" class="register-button">Register</button>
 </form>
-<footer>
-    <a href="/about">About</a>
-    <a href="/contact">Contact</a>
-    <a href="/privacy">Privacy</a>
-  </footer>
 </body>
-</html>
+{% endblock %}
