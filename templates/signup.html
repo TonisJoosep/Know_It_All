@@ -5,21 +5,21 @@
 {% block content %}
 <body>
 <div><b>LOGO</b></div>
-<form class="signup-form" action="/register/" method="POST">
+<form class='signup-form' action='/register/' method='POST'>
     {% csrf_token %}
-    <label for="name">First and last name:</label>
-    <input type="text" id="name" name="name" required>
+    <label for='name'>First and last name:</label>
+    <input type='text' id='name' name='name' required>
     <br>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
+    <label for='email'>Email:</label>
+    <input type='email' id='email' name='email' required>
     <br>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
+    <label for='password'>Password:</label>
+    <input type='password' id='password' name='password' required>
     <br>
-    <label for="confirm_password">Confirm Password:</label>
-    <input type="password" id="confirm_password" name="confirm_password" required>
-    
-    <button type="submit" class="register-button">Register</button>
+    <label for='confirm_password'>Confirm Password:</label>
+    <input type='password' id='confirm_password' name='confirm_password' required>
+
+    <button type='submit' class='register-button'>Register</button>
 </form>
 </body>
 {% endblock %}

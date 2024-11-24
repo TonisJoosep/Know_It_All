@@ -6,11 +6,11 @@
 <body>
 <button>Logo</button>
 <h2>Login</h2>
-<form method="post" action="{% url 'login' %}">
+<form method='post' action="{% url 'login' %}">
     {% csrf_token %}
     {{ form.as_p }}
     {% if form.errors %}
-    <div class="error">
+    <div class='error'>
     <ul>
         {% for error in form.non_field_errors %}
             <li>{{ error }}</li>
@@ -23,7 +23,7 @@
         {% endfor %}
     </div>
     {% endif %}
-    <button type="submit">Login</button>
+    <button type='submit'>Login</button>
 </form>
 <br>
 <div>Forgot password?</div>
