@@ -149,6 +149,13 @@ def privacy(request):
     return render(request, 'privacy.html')
 
 
+def get_category_icon(category_name):
+    """
+    Returns the file name of the icon for a given category.
+    """
+    return f"{category_name.lower().replace(' ', '_')}.png"
+
+
 
 
 
