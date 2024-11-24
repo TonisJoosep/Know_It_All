@@ -2,13 +2,13 @@ from django.contrib.auth.models import User
 from django.db import models
 
 GAME_TYPE_CHOICES = {
-    "TF": "True/False",
-    "MC": "Multiple choices",
+    'TF': 'True/False',
+    'MC': 'Multiple choices',
 }
 DIFFICULTY_CHOICES = {
-    "E": "Easy",
-    "M": "Medium",
-    "H": "Hard",
+    'E': 'Easy',
+    'M': 'Medium',
+    'H': 'Hard',
 }
 
 
@@ -18,7 +18,7 @@ class Game(models.Model):
         null=False,
         blank=False,
         choices=GAME_TYPE_CHOICES,
-        default=GAME_TYPE_CHOICES["MC"],
+        default=GAME_TYPE_CHOICES['MC'],
         max_length=32,
     )
     category = models.CharField(null=True, blank=True, max_length=64)
@@ -26,10 +26,10 @@ class Game(models.Model):
         null=False,
         blank=False,
         choices=DIFFICULTY_CHOICES,
-        default=DIFFICULTY_CHOICES["M"],
+        default=DIFFICULTY_CHOICES['M'],
         max_length=16,
     )
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
-        return f"{self.category} - {self.difficulty} - {self.user}"
+        return f'{self.category} - {self.difficulty} - {self.user}'

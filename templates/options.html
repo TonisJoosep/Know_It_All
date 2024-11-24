@@ -5,38 +5,33 @@
 {% block content %}
     <h2>{{ category_name }} Options</h2>
 
-    <form method="get" action="{% url 'game' %}">
+    <form method='get' action="{% url 'game' %}">
         {% if subcategories and subcategories|length > 0 %}
-            <label for="subcategory">Subcategory:</label>
-            <select name="subcategory" id="subcategory">
+            <label for='subcategory'>Subcategory:</label>
+            <select name='subcategory' id='subcategory'>
                 {% for subcategory_name, subcategory_id in subcategories.items %}
                     <option value="{{ subcategory_name }}">{{ subcategory_name }}</option>
                 {% endfor %}
             </select>
         {% endif %}
 
-        <input type="hidden" name="category" value="{{ category_name }}">
+        <input type='hidden' name='category' value="{{ category_name }}">
 
-        <label for="difficulty">Difficulty:</label>
-        <select name="difficulty" id="difficulty">
+        <label for='difficulty'>Difficulty:</label>
+        <select name='difficulty' id='difficulty'>
             {% for choice in difficulty_choices %}
                 <option value="{{ choice }}">{{ choice }}</option>
             {% endfor %}
         </select>
 
-        <label for="amount">Number of Questions:</label>
-        <input type="range" name="amount" id="amount" value="10" min="1" max="15">
-        <span id="amount-value">10</span>
+        </script><label for="amount">Number of Questions:</label>
+            <select id="amount" name="amount">
+                <option value="1" selected>1</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+            </select>
 
-        <script>
-        const amountSlider = document.getElementById('amount');
-        const amountValue = document.getElementById('amount-value');
-
-        amountSlider.addEventListener('input', () => {
-        amountValue.textContent = amountSlider.value;
-        });
-        </script>
-
-        <button type="submit">Start Game</button>
+        <button type='submit'>Start Game</button>
     </form>
 {% endblock %}
