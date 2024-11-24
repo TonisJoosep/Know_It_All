@@ -18,12 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 
-from game import views
-
 urlpatterns = [
     path('', include('game.urls')),
     path('admin/', admin.site.urls),
-    path('options/<str:category_name>/', views.options, name='options'),
-    path('forgot_password', views.forgot_password, name='forgot_password'),
-    path('signup/', views.signup, name='signup'),
+
 ]

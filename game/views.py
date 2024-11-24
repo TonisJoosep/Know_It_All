@@ -1,5 +1,3 @@
-from ftplib import all_errors
-
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.http import HttpResponse
@@ -28,7 +26,8 @@ def options(request, category_name):
 
     See vaade tõmbab alamkategooriad (kui need on olemas) ja edastab need koos muude valikutega mallile.
     """
-    subcategories = get_subcategories(category_name) or {}  # Tõmbab alamkategooriad, kui neid pole, kasutab tühja sõnastikku
+    # Tõmbab alamkategooriad, kui neid pole, kasutab tühja sõnastikku
+    subcategories = get_subcategories(category_name) or {}
     context = {
         'category_name': category_name,  # Edastab peakategooria nime
         'subcategories': subcategories,  # Edastab alamkategooriad
@@ -50,7 +49,7 @@ api-new1
     difficulty = request.GET.get('difficulty')  # Saab raskusastme päringu parameetritest
     amount = request.GET.get('amount')  # Saab küsimuste arvu päringu parameetritest
 
-    if amount is None:
+    if not amount:
         amount = 10 # kasutab vaikeväärtusena 10 küsimust
     else :
         amount = int(amount) # muudab küsimuste arvu täisarvuks
@@ -76,10 +75,9 @@ api-new1
         # Kui küsimused on edukalt tõmmatud, renderdatakse game.html mall koos küsimustega
         context = {'questions': questions}
         return render(request, 'game.html', context)
-    else:
-        # Kui küsimuste tõmbamisel on viga, logitakse see ja renderdatakse error.html mall
-        print("Error fetching questions from API.")
-        return render(request, 'error.html')
+    # Kui küsimuste tõmbamisel on viga, logitakse see ja renderdatakse error.html mall
+    print("Error fetching questions from API.")
+    return render(request, 'error.html')
 
 def login_user(request):
     return render(request, 'registration/login.html')
@@ -124,21 +122,19 @@ def login_view(request):
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
-        if user is not None:
+        if user:
             login(request, user)
             messages.success(request, 'Login Successful')
             return redirect('index')
-        else:
-            messages.error(request, 'Invalid Username or Password')
-            return redirect('login')
-    else:
-        form = LoginForm()
-        return render(request, 'registration/login.html', {'form': form})
+        messages.error(request, 'Invalid Username or Password')
+        return redirect('login')
+    form = LoginForm()
+    return render(request, 'registration/login.html', {'form': form})
 
 
 def logout_view(request):
     logout(request)
-    messages.success(request, "Logged out successfully")
+    messages.success(request, 'Logged out successfully')
     return redirect('index')
 
 

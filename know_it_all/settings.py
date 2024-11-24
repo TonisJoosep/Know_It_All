@@ -139,3 +139,5 @@ LOGIN_URL = '/login/'
 LOGOUT_URL = '/logout/'
 
 STATICFILES_DIRS = [BASE_DIR / "static"]
+
+API_URL = "https://opentdb.com/api.php"
