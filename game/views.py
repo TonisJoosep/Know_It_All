@@ -32,7 +32,6 @@ def options(request, category_name):
         'category_name': category_name,
         'subcategories': subcategories,
         'difficulty_choices': ['easy', 'medium', 'hard'],
-        'type_choices': ['multiple', 'boolean']
     }
     return render(request, 'options.html', context)
 
@@ -67,7 +66,9 @@ def game(request):
 
     if questions:
         for question in questions:
-            all_answers = question['incorrect_answers'] + [question['correct_answer']]
+            incorrect_answers = question.get('incorrect_answers', [])
+            correct_answers = question.get('correct_answer')
+            all_answers = incorrect_answers + [correct_answers]
             random.shuffle(all_answers)
             question['shuffled_answers'] = all_answers
         context = {'questions': questions}
