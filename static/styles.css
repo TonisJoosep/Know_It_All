@@ -107,7 +107,6 @@ main #main-logo {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
-    word-break: break-all;
     text-align: center;
     font-size: 1.3em;
     font-weight: bold;
@@ -163,9 +162,5 @@ footer a:hover {
 
     header button {
         font-size: 14px;
-    }
-
-    .category-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     }
 }
