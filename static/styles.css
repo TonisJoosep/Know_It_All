@@ -83,11 +83,14 @@ main #main-logo {
 
 .category-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 items per row initially */
-    grid-template-rows: repeat(4, auto); /* 4 rows initially */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
     gap: 20px;
+    margin: 20px auto;
     margin-top: 30px;
     padding: 0 10px;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 /* Responsive grid layout */
@@ -109,25 +112,29 @@ main #main-logo {
     align-items: center;
     justify-content: space-between;
     background-color: #ffffff;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     text-align: center;
     font-size: 1.3em;
     font-weight: bold;
+
     transition: transform 0.2s ease, background-color 0.3s ease;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     height: 200px;
-    width: 150px
+    max-width: 100%; /* Allow scaling with screen size */
+    width: 100%; /* Ensure consistent width */
 }
 
 .category-box:hover {
     transform: scale(1.05);
     background-color: #e0f7fa;
 }
+
 .category-name {
     margin-bottom: 10px; /* Add space between name and image */
     font-size: 1em;
+    text-decoration: none;
     color: #333333;
 }
 
@@ -138,6 +145,7 @@ main #main-logo {
 }
 
 .category-grid a {
+    text-decoration: none;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Make boxes responsive */
     gap: 20px;
@@ -170,6 +178,10 @@ footer a:hover {
 @media (max-width: 768px) {
     .container {
         width: 90%;
+    }
+    .category-grid {
+        gap: 15px; /* Smaller gap for compact screens */
+        padding: 0 10px; /* Adjust padding */
     }
 
     main h1 {
