@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let score = 0;
 
     const questionContainer = document.getElementById('question-container');
+    const answersContainer = document.getElementById('answers-container');
     const nextButton = document.getElementById('next-button');
     const resultsContainer = document.getElementById('results-container');
     const scoreSpan = document.getElementById('score');
@@ -14,40 +15,39 @@ document.addEventListener('DOMContentLoaded', function () {
         const questionData = questions[index];
         const questionDiv = document.querySelector('.question');
 
-        let questionHtml = `<h3>${questionData.question}</h3><ul>`;
-        const answers = questionData.shuffled_answers;
+        questionDiv.textContent = questionData.question;
 
-        answers.forEach(answer => {
-            questionHtml += `<li><input type='radio' name='answer' value="${answer}"> ${answer}</li>`;
+        answersContainer.innerHTML = '';
+
+        questionData.shuffled_answers.forEach(answer => {
+            const button = document.createElement('button');
+            button.className = 'answer-button';
+            button.textContent = answer;
+            button.addEventListener('click', () => handleAnswerClick(answer));
+            answersContainer.appendChild(button);
         });
-        questionHtml += '</ul>';
-        questionDiv.innerHTML = questionHtml;
 
-        nextButton.style.display = 'block';
+        nextButton.style.display = 'none'; // Hide the next button initially
     }
 
-    nextButton.addEventListener('click', () => {
-        const selectedAnswer = document.querySelector('input[name="answer"]:checked');
-        if (selectedAnswer) {
-            if (selectedAnswer.value === questions[currentQuestionIndex].correct_answer) {
-                score++;
-            }
-            currentQuestionIndex++;
-            if (currentQuestionIndex < questions.length) {
-                showQuestion(currentQuestionIndex);
-            } else {
-                // Show results
-                scoreSpan.textContent = score;
-                questionContainer.style.display = 'none';
-                resultsContainer.style.display = 'block';
-                buttonsContainer.style.display = 'block';
-            }
-        } else {
-            // Handle case where no answer is selected
-            alert('Please select an answer.');
-        }
-    });
+    function handleAnswerClick(selectedAnswer) {
+        const questionData = questions[currentQuestionIndex];
 
+        if (selectedAnswer === questionData.correct_answer) {
+            score++;
+        }
+
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+            showQuestion(currentQuestionIndex);
+        } else {
+            // Show results
+            scoreSpan.textContent = score;
+            questionContainer.style.display = 'none';
+            resultsContainer.style.display = 'block';
+            buttonsContainer.style.display = 'block';
+        }
+    }
     replayButton.addEventListener('click', () => {
         currentQuestionIndex = 0;
         score = 0;
