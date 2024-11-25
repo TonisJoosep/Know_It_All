@@ -22,7 +22,7 @@
     <button id='replay-button'>Replay</button>
     <a href='/' id='home-button' class='button'>Back to Home Page</a>
   </div>
-
+<div id="data-container" data-questions='{{ questions|safe }}'></div>
 <script>
     const questions = {{ questions|safe }}; // Pass data from Django context
 </script>
