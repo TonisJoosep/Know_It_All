@@ -20,7 +20,8 @@
 
     <div id='results-container' style='display: none;'>
         <h2>Results</h2>
-        <p>Your score: <span id='score'></span></p>
+        <p>Your total score (multiplied by difficulty): <span id='score'>{{ total_score }}</span></p>
+        <p>Difficulty Multiplier: <span id='multiplier'>{{ multiplier }}x</span></p>
     </div>
     <div class='buttons-container' style='display: none;' id='game-buttons-container'>
         <button id='replay-button'>Replay</button>
