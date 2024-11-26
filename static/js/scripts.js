@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const questionData = questions[index];
         const questionDiv = document.querySelector('.question');
 
-        questionDiv.textContent = questionData.question;
+        questionDiv.innerHTML = questionData.question;
 
         answersContainer.innerHTML = '';
 

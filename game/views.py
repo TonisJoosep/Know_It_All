@@ -63,6 +63,12 @@ def game(request):
         category=category_id,
         difficulty=difficulty,
     )
+    difficulty_multipliers = {
+        'easy': 1,
+        'medium': 1.5,
+        'hard': 2,
+    }
+    multiplier = difficulty_multipliers.get(difficulty, 1)
 
     if questions:
         for question in questions:
@@ -71,7 +77,18 @@ def game(request):
             all_answers = incorrect_answers + [correct_answers]
             random.shuffle(all_answers)
             question['shuffled_answers'] = all_answers
-        context = {'questions': questions}
+
+        total_score = 0
+        for question in questions:
+            if 'user_answer' in question and question['user_answer'] == question['correct_answer']:
+                total_score += 10
+        total_score *= multiplier
+        context = {
+            'questions': questions,
+            'total_score': total_score,
+            'difficulty': difficulty,
+            'multiplier': multiplier,
+        }
         return render(request, 'game.html', context)
 
     print('Error fetching questions from API.')
