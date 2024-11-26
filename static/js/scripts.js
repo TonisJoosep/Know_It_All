@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log(questions); // Pass questions from Django context
     let currentQuestionIndex = 0;
     let score = 0;
+    const difficulty = document.getElementById('data-container').dataset.difficulty; // Get difficulty
+    const multiplier = parseFloat(document.getElementById('data-container').dataset.multiplier);
 
     const questionContainer = document.getElementById('question-container');
     const answersContainer = document.getElementById('answers-container');
@@ -34,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const questionData = questions[currentQuestionIndex];
 
         if (selectedAnswer === questionData.correct_answer) {
-            score++;
+            score += 10;
         }
 
         currentQuestionIndex++;
@@ -42,7 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
             showQuestion(currentQuestionIndex);
         } else {
             // Show results
-            scoreSpan.textContent = score;
+            const finalScore = score * multiplier;
+            scoreSpan.textContent = finalScore.toFixed(0)
             questionContainer.style.display = 'none';
             resultsContainer.style.display = 'block';
             buttonsContainer.style.display = 'block';

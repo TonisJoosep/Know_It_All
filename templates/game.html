@@ -27,9 +27,16 @@
         <button id='replay-button'>Replay</button>
         <a href='/' id='home-button' class='button'>Back to Home Page</a>
     </div>
+     <div id="data-container" 
+         data-questions='{{ questions|safe }}'
+         data-total-score='{{ total_score }}'
+         data-multiplier='{{ multiplier }}'
+         data-correct-answers-count='{{ correct_answers_count }}'>
+    </div>
     <div id="data-container" data-questions='{{ questions|safe }}'></div>
     <script>
         const questions = {{ questions|safe }}; // Pass data from Django context
+        
     </script>
     <script src="{% static 'js/scripts.js' %}"></script>
 
