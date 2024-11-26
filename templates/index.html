@@ -11,7 +11,7 @@
         <div class='category-grid'>
             {% for category_name in categories %}
                 <a href="{% url 'options' category_name %}">
-                    <div class='category'>
+                    <div class='category-box'>
                         <img src="{% static 'categories/' %}{{ category_name|lower }}.png" alt="{{ category_name }} Icon">
                         <span>{{ category_name }}</span>
                     </div>

@@ -1,5 +1,5 @@
 MAIN_CATEGORIES = {
-    'General Knowledge': 9,
+    'General': 9,
     'Entertainment': {
         'Books': 10,
         'Film': 11,

@@ -90,10 +90,6 @@ def register(request):
     return render(request, 'signup.html')
 
 
-def reset_password(request):
-    return render(request, 'reset_password.html')
-
-
 def signup(request):
     return render(request, 'signup.html')
 
