@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const replayButton = document.getElementById('replay-button');
     const buttonsContainer = document.getElementById('game-buttons-container');
 
+
     function showQuestion(index) {
         const questionData = questions[index];
         const questionDiv = document.querySelector('.question');
