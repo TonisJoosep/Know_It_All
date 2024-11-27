@@ -147,7 +147,7 @@ def login_view(request):
         messages.error(request, 'Invalid Username or Password')
         return redirect('login')
     form = LoginForm()
-    return render(request, 'registration/login.html', {'form': form})
+    return render(request, 'registration/login.html', {'form': form, 'show_header': False})
 
 
 def logout_view(request):

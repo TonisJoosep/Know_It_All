@@ -7,6 +7,8 @@
     <link rel='icon' type='image/x-icon' href="{% static 'favicon.ico' %}">
 </head>
 <body>
+
+{% if show_header != False %}
 <header>
     <a href="{% url 'index' %}">
         <img src='/static/logo1.png' alt='Trivia Game Logo' id='logo'>
@@ -17,7 +19,7 @@
                 <li class="{{ message.tags }}">{{ message }}</li>
             {% endfor %}
         </ul>
-    {% endif %}
+{% endif %}
     <div class='user-actions'>
         {% if user.is_authenticated %}
             <span id='username'>Welcome, {{ user.username }}</span>
@@ -31,15 +33,16 @@
                 <button type='submit' id='login-button'>Login</button>
             </form>
         {% endif %}
-
     </div>
 </header>
+{% endif %}
 
 <main>
     {% block content %}
     {% endblock %}
 </main>
 
+{% if show_footer != False %}
 <footer>
     <div class='container'>
         <a href="{% url 'about' %}">About</a>
@@ -47,5 +50,7 @@
         <a href="{% url 'privacy' %}">Privacy</a>
     </div>
 </footer>
+{% endif %}
+
 </body>
 </html>
