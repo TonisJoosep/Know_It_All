@@ -123,14 +123,16 @@ def register_view(request):
         confirm_password = request.POST.get('confirm_password')
 
         if password != confirm_password:
-            return HttpResponse('Passwords do not match!<br><a href="/signup">Try again</a>')
+            messages.error(request, "Password doesn't match.")
+            return redirect('signup')
 
         if User.objects.filter(email=email).exists():
-            return HttpResponse('Email already exists<br><a href="/signup">Try again</a>')
+            messages.error(request, "Email already registered.")
+            return redirect('signup')
         username = name
         User.objects.create_user(username=username, email=email, password=password)
-        return HttpResponse(
-            f'Welcome, {name}! Your account has been created successfully.<br><a href="/game/">Start the game</a>')
+        messages.success(request, f'Welcome {name}, Your account has been created successfully.')
+        return redirect('index')
     return render(request, 'signup.html')
 
 
