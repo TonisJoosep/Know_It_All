@@ -11,6 +11,13 @@
     <a href="{% url 'index' %}">
         <img src='/static/logo1.png' alt='Trivia Game Logo' id='logo'>
     </a>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
     <div class='user-actions'>
         {% if user.is_authenticated %}
             <span id='username'>Welcome, {{ user.username }}</span>
@@ -24,6 +31,7 @@
                 <button type='submit' id='login-button'>Login</button>
             </form>
         {% endif %}
+
     </div>
 </header>
 

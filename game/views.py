@@ -100,6 +100,10 @@ def login_user(request):
 
 
 def forgot_password(request):
+    if request.method == "POST":
+        email = request.POST.get("email")
+        messages.success(request, "Password reset email has been sent.")
+        return redirect('index')
     return render(request, 'forgot_password.html')
 
 
