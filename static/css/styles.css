@@ -1,11 +1,11 @@
 /* General styles */
 html, body {
     height: 100%;
-    font-family: Calibri;
+    font-family: Calibri, sans-serif;
     margin: 0;
     display: flex;
     flex-direction: column;
-    background-color: #f9f9f9;
+    background-color: #dcc7aa;
     color: #0b2838;
 }
 
@@ -21,12 +21,11 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #066565;
-    color: white;
+    background-color: #6b7a8f;
+    color: #6b7a8f;
     padding: 10px 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 header #logo {
     width: 100px;
 }
@@ -43,37 +42,37 @@ header #username {
 }
 
 header button {
-    background-color: white;
-    color: rgb(11, 40, 56);
+    background-color: #f7c331;
+    color: rgb(15, 37, 87);
     border: none;
     padding: 8px 15px;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s ease;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 header button:hover {
-    background-color: #f1f1f1;
+    background-color: #dcc7aa;
 }
 
 main {
     flex: 1; /* Allow main to expand and fill the space between header and footer */
-    padding: 20px;
+    padding: 24px;
 }
 
 /* Main content styling */
 main h1 {
-    font-size: 36px;
+    font-size: 30px;
     margin-bottom: 10px;
-    color: #a61313;
+    color: #6b7a8f;
 }
 
 main h2 {
-    font-size: 24px;
-    margin-top: 20px;
-    color: #555;
+    font-size: 22px;
+    margin-top: 40px;
+    color: #6b7a8f;
 }
 
 main #main-logo {
@@ -126,7 +125,7 @@ main #main-logo {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background-color: #ffffff;
+    background-color: #f7c331;
     padding: 10px; /* Adjustable padding */
     border-radius: 8px;
     text-align: center;
@@ -140,8 +139,12 @@ main #main-logo {
 
 .category-box:hover {
     transform: scale(1.05);
-    background-color: #e0f7fa;
+    background-color: #dcc7aa;
+    border: 0.5px solid #0f2557;
+    box-shadow: 0 4px 10px rgb(15, 37, 87);
 }
+
+
 
 .category-grid a {
     text-decoration: none;
@@ -150,7 +153,7 @@ main #main-logo {
 
 /* Footer styling */
 footer {
-    background-color: #edecec;
+    background-color: #6b7a8f;
     color: white;
     padding: 5px 0;
     margin-top: 30px;
@@ -158,15 +161,15 @@ footer {
 }
 
 footer a {
-    color: #2b5463;
+    color: #0f2557;
     margin: 0 10px;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 16px;
     transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: #958888;
+    color: #dcc7aa;
 }
 
 /* Responsive design */
@@ -176,7 +179,7 @@ footer a:hover {
     }
 
     main h1 {
-        font-size: 28px;
+        font-size: 24px;
     }
 
     main h2 {
