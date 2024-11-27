@@ -14,17 +14,13 @@
             <div class="form-field">
                 <label for="{{ form.username.id_for_label }}">Username</label>
                 {{ form.username }}
-                {% for error in form.username.errors %}
-                    <div class="error">{{ error }}</div>
-                {% endfor %}
+
             </div>
             
             <div class="form-field">
                 <label for="{{ form.password.id_for_label }}">Password</label>
                 {{ form.password }}
-                {% for error in form.password.errors %}
-                    <div class="error">{{ error }}</div>
-                {% endfor %}
+
             </div>
             
             {% if form.non_field_errors %}
