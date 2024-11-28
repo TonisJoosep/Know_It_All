@@ -1,272 +1,143 @@
-/* General styles */
-body {
-    font-family: 'Raleway', sans-serif;
-    background: linear-gradient(135deg, #dcd2cf, #dcd2cf);
-    color: #0f2557;
+html, body {
+    font-family: Calibri, sans-serif;
+    height: 100%;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+}
+
+.content {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    padding: 20px;
+    position: relative;
 }
 
-/* Logo button */
-button {
-    background-color: transparent;
-    color: #f7c331;
-    border: none;
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    cursor: pointer;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+.card-container {
+    position: relative; /* This makes sure the back button is positioned relative to the card */
 }
 
-button:hover {
-    color: #dcd2cf;
-}
-
-/* Card container for the form */
 .card {
-    background: #6b7a8f;
-    padding: 20px 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 350px;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-/* Title */
-h2 {
-    font-size: 24px;
-    color: #6b7a8f;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-}
-
-/* Form styles */
-form {
+    width: 300px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    align-items: center;
+    justify-content: center;
 }
 
-form input {
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%;
-}
-
-form input:focus {
-    outline: none;
-    border-color: #0f2557;
-    box-shadow: 0 0 8px rgb(15, 37, 87);
-}
-
-/* Submit button */
-form button {
-    background-color: #f7c331;
-    color: #0f2557;
-    border: none;
-    padding: 10px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-form button:hover {
-    background-color: #dcd2cf;
-    transform: translateY(-2px);
-}
-
-/* Links and additional actions */
-a {
-    color: #0f2557;
+.back-button {
+    position: absolute;
+    top: -80px; /* Always 20px above the card */
+    left: 50%;
+    transform: translateX(-50%); /* Center the button horizontally */
+    padding: 6px 8px; /* Smaller padding for the button */
+    width: 140px;
+    font-size: 14px; /* Smaller font size */
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #f7c331;
-}
-
-div.links {
-    margin-top: 15px;/* General styles */
-body {
-    font-family: 'Raleway', sans-serif;
-    background: linear-gradient(135deg, #6b7a8f, #6b7a8f);
-    color: #333;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 20px;
-}
-
-/* Logo button */
-button {
-    background-color: transparent;
+    text-align: center;
+    background-color: #066464;
     color: white;
     border: none;
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 10px;
+    border-radius: 4px;
     cursor: pointer;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.back-button:hover {
+    background-color: #958888; /* Darker shade on hover */
+}
+
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form-group input {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0 auto;
+    display: block;
+}
+
+button {
+    width: 90%;
+    padding: 10px;
+    background-color: #066363;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
 button:hover {
-    color: #ffd700;
+    background-color: #958888;
 }
 
-/* Card container for the form */
-.card {
-    background: #dcd2cf;
-    padding: 20px 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 350px;
+.links {
     text-align: center;
-    box-sizing: border-box;
+    margin-top: 10px;
 }
 
-/* Title */
-h2 {
-    font-size: 24px;
-    color: #0f2557;
-    margin-bottom: 15px;
-    text-transform: uppercase;
+.links .reset-password {
+    margin-bottom: 20px;
 }
 
-/* Form styles */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.links a {
+    text-decoration: none;
+    color: #066363;
 }
 
-form input {
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%;
+.links a:hover {
+    color: #958888;
 }
 
-form input:focus {
-    outline: none;
-    border-color: #2b5463;
-    box-shadow: 0 0 8px rgba(43, 84, 99, 0.3);
+.create-account {
+    text-decoration: none;
+    color: #066363;
 }
 
-/* Submit button */
-form button {
-    background-color: #2b5463;
+.create-account:hover {
+    color: #958888;
+}
+
+footer {
+    background-color: #edecec;
     color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    height: 59px;
+    padding: 5px 0;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
-form button:hover {
-    background-color: #dcd2cf;
-    transform: translateY(-2px);
-}
-
-/* Links and additional actions */
-a {
+footer a {
     color: #2b5463;
+    margin: 0 10px;
     text-decoration: none;
-    font-weight: bold;
-    line-height: 1.6;
+    font-size: 15px;
     transition: color 0.3s ease;
+    text-align: center;
 }
 
-a:hover {
-    color: #dcd2cf;
+footer a:hover {
+    color: #958888;
 }
-
-div.links {
-    margin-top: 15px;
-}
-
-h3 {
-    color: #ef164f;
-    margin-top: 20px;
-    font-size: 16px;
-}
-
-.error {
-    background: #ffd7d7;
-    color: #ef164f;
-    border: 1px solid #ef164f;
-    padding: 8px;
-    border-radius: 6px;
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.error ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-/* Footer links - Place links in one line */
-.footer-links {
-    display: flex; /* Align the footer links in one row */
-    justify-content: center; /* Center the links horizontally */
-    gap: 20px; /* Space between the links */
-    margin-top: 20px; /* Add some space above the footer links */
-}
-
-.footer-links a {
-    color: #2b5463; /* Link color */
-    font-size: 14px; /* Font size for footer links */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s ease; /* Transition effect for hover */
-}
-
-.footer-links a:hover {
-    color: #89c9b8; /* Color change when hovered */
-}
-
-}
-
-.error {
-    background: #ffd7d7;
-    color: #ef164f;
-    border: 1px solid #ef164f;
-    padding: 8px;
-    border-radius: 6px;
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.error ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-
-
-
-
-
