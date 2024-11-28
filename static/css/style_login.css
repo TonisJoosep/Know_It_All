@@ -118,26 +118,21 @@ button:hover {
 }
 
 footer {
-    background-color: #edecec;
+    background-color: #6b7a8f;
     color: white;
-    height: 59px;
     padding: 5px 0;
     margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-footer a {
-    color: #2b5463;
-    margin: 0 10px;
-    text-decoration: none;
-    font-size: 15px;
-    transition: color 0.3s ease;
     text-align: center;
 }
 
+footer a {
+    color: #0f2557;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
 footer a:hover {
-    color: #958888;
+    color: #dcd2cf;
 }
