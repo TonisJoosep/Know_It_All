@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang='en'>
+
 <head>
     {% load static %}
     <title>{% block title %}Know_It_All{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <link rel='stylesheet' href="{% static 'css/styles.css' %}">
     <link rel='icon' type='image/x-icon' href="{% static 'favicon.ico' %}">
 </head>
@@ -45,9 +47,9 @@
 {% if show_footer != False %}
 <footer>
     <div class='container'>
-        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'about' %}">About Us</a>
         <a href="{% url 'contact' %}">Contact</a>
-        <a href="{% url 'privacy' %}">Privacy</a>
+        <a href="{% url 'privacy' %}">Privacy Policy</a>
     </div>
 </footer>
 {% endif %}
