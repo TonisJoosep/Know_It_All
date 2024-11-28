@@ -11,9 +11,15 @@
 
     <div id='question-container'>
         <div class='question' data-question-index='0'></div>
-        <div id='answers-container' class='answers-container'>
-
+        <div id="answers-container" class="answers-container">
+            {% for answer in answers %}
+            <button>{{ Option | safe }}</button>
+            <button>{{ Option | safe }}</button>
+            <button>{{ Option | safe }}</button>
+            <button>{{ Option | safe }}</button>
+            {% endfor %}
         </div>
+        
 
         <button id='next-button' style='display: none;'>Next Question</button>
     </div>
@@ -25,9 +31,9 @@
     </div>
     <div class='buttons-container' style='display: none;' id='game-buttons-container'>
         <button id='replay-button'>Replay</button>
-        <a href='/' id='home-button' class='button'>Back to Home Page</a>
+        <a href='/' id='home-button' class='button'><button>Back to Home Page</button></a>
     </div>
-     <div id="data-container" 
+    <div id="data-container"
          data-questions='{{ questions|safe }}'
          data-total-score='{{ total_score }}'
          data-multiplier='{{ multiplier }}'
