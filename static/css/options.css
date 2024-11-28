@@ -17,7 +17,7 @@
 }
 
 .topic-name {
-    color: #cd442d;
+    color: #6b7a8f;
     font-size: 24px;
     font-weight: bold;
     margin-bottom : 20px;
@@ -48,12 +48,12 @@ form select, form button {
 }
 .options-page button {
     background-color: rgb(29, 62, 71) !important;
-    color: #fdfdfd;
+    color: #0f2557;
     font-weight: bold;
     cursor: pointer;
 }
 
 .options-page button:hover {
-    background-color: rgba(253, 222, 148, 0.59);
+    background-color: rgb(220, 210, 207);
 
 }

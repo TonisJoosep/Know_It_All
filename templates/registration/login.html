@@ -30,6 +30,7 @@
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" required>
                 </div>
+
             
                 {% if form.non_field_errors %}
                 <div class="error">
@@ -41,6 +42,7 @@
                 </div>
             {% endif %}
 
+ feature/login-rework-again
                 <div class="form-group">
                     <button type="submit">Login</button>
                 </div>
@@ -55,6 +57,9 @@
                 <small>New to Know-It-All?</small><br>
                 <a href="{% url 'signup' %}">Create a free account now!</a>
             </div>
+
+
+
         </div>
     </div>
 </div>
