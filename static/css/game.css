@@ -3,8 +3,8 @@ body {
     font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: radial-gradient(circle, #003366, #000000); /* Millionaire-like dark background */
-    color: #ffffff;
+    background: #dcd2cf;
+    color: #dcd2cf;
     text-align: center;
     height: 100vh;
     display: flex;
@@ -38,8 +38,8 @@ body {
     min-width: 900px;
     max-width: 900px;
     max-height: 250px;
-    color: #ffffff;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    color: #6b7a8f;
+    text-shadow: 1px 0px 1px rgb(15, 37, 87);
     font-size: 24px;
     text-align: center;
     margin-bottom: 40px;
@@ -55,14 +55,14 @@ body {
 
 /* Answer buttons */
 .answers-container button {
-    background: linear-gradient(135deg, #003366, #00509e); /* Blue gradient */
-    color: #ffffff;
+    background: #fbde8f;
+    color: #0f2557;
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
     padding: 15px 30px;
-    border: 3px solid #ffd700; /* Gold border for Millionaire feel */
-    border-radius: 10px;
+    border: 1px solid #0f2557;
+    border-radius: 5px;
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Glowing shadow */
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
@@ -129,8 +129,8 @@ body {
     transform: translateY(1px);
 }
 footer {
-    background-color: #edecec;
-    color: white;
+    background-color: #6b7a8f;
+    color: #6b7a8f;
     padding: 5px 0;
     margin-top: 30px;
     text-align: center;
@@ -147,7 +147,7 @@ footer a {
 }
 
 footer a:hover {
-    color: #958888;
+    color: #dcd2cf;
 }
 /* Mobile responsiveness */
 @media (max-width: 768px) {
