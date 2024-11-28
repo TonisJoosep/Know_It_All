@@ -8,7 +8,7 @@
         <div class="topic-header">
             <img src="{% static 'categories/' %}{{ category_name|lower }}.png" alt="{{ category_name }} Icon"
                  class="topic-image">
-            <h2 class="topic-name">Topic: {{ category_name }}</h2>
+            <h2 class="topic-name">{{ category_name }}</h2>
         </div>
 
         <form method='get' action="{% url 'game' %}">

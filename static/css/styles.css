@@ -41,7 +41,7 @@ header #username {
 }
 
 header button {
-    background-color: #f7c331;
+    background-color: #fbde8f;
     color: rgb(15, 37, 87);
     border: none;
     padding: 8px 15px;
@@ -53,7 +53,7 @@ header button {
 }
 
 header button:hover {
-    background-color: #dcc7aa;
+    background-color: #dcd2cf;
 }
 
 main {
@@ -121,7 +121,7 @@ main #main-logo {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background-color: #f7c331;
+    background-color: #fbde8f;
     padding: 10px;
     border-radius: 8px;
     text-align: center;
@@ -135,7 +135,7 @@ main #main-logo {
 
 .category-box:hover {
     transform: scale(1.05);
-    background-color: #dcc7aa;
+    background-color: #dcd2cf;
     border: 0.5px solid #0f2557;
     box-shadow: 0 4px 10px rgb(15, 37, 87);
 }
@@ -164,7 +164,7 @@ footer a {
 }
 
 footer a:hover {
-    color: #dcc7aa;
+    color: #dcd2cf;
 }
 
 @media (max-width: 768px) {

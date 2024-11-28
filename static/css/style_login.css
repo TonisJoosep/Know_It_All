@@ -1,6 +1,6 @@
 /* General styles */
 body {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Raleway', sans-serif;
     background: linear-gradient(135deg, #dcd2cf, #dcd2cf);
     color: #0f2557;
     margin: 0;
@@ -102,7 +102,7 @@ a:hover {
 div.links {
     margin-top: 15px;/* General styles */
 body {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Raleway', sans-serif;
     background: linear-gradient(135deg, #6b7a8f, #6b7a8f);
     color: #333;
     margin: 0;
@@ -194,6 +194,7 @@ a {
     color: #2b5463;
     text-decoration: none;
     font-weight: bold;
+    line-height: 1.6;
     transition: color 0.3s ease;
 }
 
@@ -206,7 +207,7 @@ div.links {
 }
 
 h3 {
-    color: #555;
+    color: #ef164f;
     margin-top: 20px;
     font-size: 16px;
 }
@@ -248,12 +249,6 @@ h3 {
 
 }
 
-h3 {
-    color: #555;
-    margin-top: 20px;
-    font-size: 16px;
-}
-
 .error {
     background: #ffd7d7;
     color: #ef164f;
@@ -269,3 +264,9 @@ h3 {
     margin: 0;
     list-style: none;
 }
+
+
+
+
+
+
