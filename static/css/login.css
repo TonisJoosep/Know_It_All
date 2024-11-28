@@ -1,0 +1,143 @@
+html, body {
+    font-family: Calibri, sans-serif;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.card-container {
+    position: relative; /* This makes sure the back button is positioned relative to the card */
+}
+
+.card {
+    width: 300px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-button {
+    position: absolute;
+    top: -80px; /* Always 20px above the card */
+    left: 50%;
+    transform: translateX(-50%); /* Center the button horizontally */
+    padding: 6px 8px; /* Smaller padding for the button */
+    width: 140px;
+    font-size: 14px; /* Smaller font size */
+    text-decoration: none;
+    text-align: center;
+    background-color: #066464;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: #958888; /* Darker shade on hover */
+}
+
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form-group input {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0 auto;
+    display: block;
+}
+
+button {
+    width: 90%;
+    padding: 10px;
+    background-color: #066363;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #958888;
+}
+
+.links {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.links .reset-password {
+    margin-bottom: 20px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #066363;
+}
+
+.links a:hover {
+    color: #958888;
+}
+
+.create-account {
+    text-decoration: none;
+    color: #066363;
+}
+
+.create-account:hover {
+    color: #958888;
+}
+
+footer {
+    background-color: #edecec;
+    color: white;
+    height: 59px;
+    padding: 5px 0;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+footer a {
+    color: #2b5463;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s ease;
+    text-align: center;
+}
+
+footer a:hover {
+    color: #958888;
+}
