@@ -3,92 +3,95 @@ body {
     font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #2b5463, #89c9b8);
+    background: radial-gradient(circle, #003366, #000000); /* Millionaire-like dark background */
     color: #ffffff;
     text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-h1 {
-    font-size: 36px;
-    margin-top: 20px;
-    color: #ffd700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+/* Game container - consistent size */
+#game-container {
+    width: 800px;
+    max-width: 90%; /* Responsive scaling */
+    height: 600px;
+    background: linear-gradient(135deg, #2b5463, #23495a); /* Gradient background */
+    border: 4px solid #ffd700; /* Gold border */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Dramatic shadow */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space between question and answers */
+    box-sizing: border-box;
 }
 
-/* Question container */
+/* Question area */
 #question-container {
     background: rgba(255, 255, 255, 0.1);
     border: 2px solid #ffffff;
-    border-radius: 15px;
+    border-radius: 10px;
     padding: 20px;
-    max-width: 700px;
-    margin: 20px auto;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.question {
+    min-width: 900px;
+    max-width: 900px;
+    max-height: 250px;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     font-size: 24px;
-    margin-bottom: 20px;
-    padding: 10px;
-    color: #fff;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-/* Buttons */
-button {
-    background-color: #ffd700;
-    color: #2b5463;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
+/* Answers container - two answers per row */
+.answers-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 15px; /* Space between answers */
+    justify-items: center; /* Center buttons horizontally */
+}
+
+/* Answer buttons */
+.answers-container button {
+    background: linear-gradient(135deg, #003366, #00509e); /* Blue gradient */
+    color: #ffffff;
     font-size: 18px;
     font-weight: bold;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    border: 3px solid #ffd700; /* Gold border for Millionaire feel */
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Glowing shadow */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    width: 90%; /* Fixed button size to prevent resizing */
+    max-width: 300px; /* Limit maximum button width */
 }
 
-button:hover {
-    background-color: #f1c40f;
-    transform: translateY(-2px);
+.answers-container button:hover {
+    background: linear-gradient(135deg, #00509e, #0077c2); /* Brighten on hover */
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 10px 20px rgba(255, 215, 0, 0.7); /* Gold glow on hover */
 }
 
-#next-button {
-    margin-top: 20px;
-}
-
-.buttons-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.buttons-container a {
-    background-color: #ffffff;
-    color: #2b5463;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    font-size: 18px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.buttons-container a:hover {
-    background-color: #e0e0e0;
-    transform: translateY(-2px);
+.answers-container button:active {
+    transform: translateY(1px); /* Pressed effect */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
 }
 
 /* Results container */
 #results-container {
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid #ffffff;
+    background: rgba(0, 51, 102, 0.8);
+    border: 3px solid #ffd700;
     border-radius: 15px;
     padding: 20px;
-    max-width: 600px;
-    margin: 20px auto;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 22px;
+    display: none; /* Hidden by default */
 }
 
 #results-container h2 {
@@ -97,37 +100,78 @@ button:hover {
     color: #ffd700;
 }
 
-#results-container p {
-    font-size: 20px;
-    color: #ffffff;
+/* Buttons container */
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
 }
 
-/* Data container (hidden) */
-#data-container {
-    display: none;
+.buttons-container button {
+    background: #ffd700;
+    color: #2b5463;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Responsive design */
+.buttons-container button:hover {
+    background: #f1c40f;
+    transform: translateY(-2px);
+}
+
+.buttons-container button:active {
+    transform: translateY(1px);
+}
+footer {
+    background-color: #edecec;
+    color: white;
+    padding: 5px 0;
+    margin-top: 30px;
+    text-align: center;
+    position: relative; /* Ensures footer doesn't overlap game-container */
+    width: 100%; /* Footer spans the full width */
+}
+
+footer a {
+    color: #2b5463;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #958888;
+}
+/* Mobile responsiveness */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 28px;
+    #game-container {
+        width: 100%;
+        height: auto;
+        padding: 15px;
     }
 
-    .question {
+    #question-container {
         font-size: 20px;
     }
 
-    button {
-        font-size: 16px;
-        padding: 8px 15px;
+    .answers-container {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+        gap: 15px;
     }
 
-    .buttons-container a {
+    .answers-container button {
         font-size: 16px;
-        padding: 8px 15px;
+        padding: 10px 20px;
     }
 
-    #results-container p {
+    #results-container {
         font-size: 18px;
     }
 }
