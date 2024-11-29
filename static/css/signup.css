@@ -25,7 +25,7 @@ html, body {
     padding: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    background-color: #fff;
+    background-color: #fbde8f;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,6 +43,7 @@ html, body {
 }
 
 .form-group label {
+    color: #6b7a8f;
     margin-bottom: 5px;
     font-weight: bold;
     text-align: center;
@@ -51,7 +52,7 @@ html, body {
 .form-group input {
     width: 90%;
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 0.5px solid #2b5463;
     border-radius: 4px;
     margin: 0 auto;
     display: block;
@@ -60,8 +61,8 @@ html, body {
 button {
     width: 90%;
     padding: 10px;
-    background-color: #f9dc8e;
-    color: #0b2838;
+    background-color: #2b5463;
+    color: #fbde8f;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -75,7 +76,11 @@ button {
 }
 
 button:hover {
-    background-color: #958888;
+    background-color: #dcc7aa;
+    color: #2b5463;
+    transform: translateY(-5px);
+    border: 0.5px solid #2b5463;
+    box-shadow: 0 4px 10px rgb(43, 84, 99);
 }
 
 .links {

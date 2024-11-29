@@ -8,6 +8,7 @@ html, body {
 }
 
 .content {
+    font-family: 'Raleway', sans-serif;
     flex: 1;
     display: flex;
     justify-content: center;
@@ -24,25 +25,31 @@ html, body {
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    background-color: #fff;
+    background-color: #fbde8f;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
+h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #6b7a8f;
+}
 .back-button {
     position: absolute;
     top: -80px; /* Always 20px above the card */
     left: 50%;
     transform: translateX(-50%); /* Center the button horizontally */
-    padding: 6px 8px; /* Smaller padding for the button */
+    padding: 10px 10px; /* Smaller padding for the button */
     width: 140px;
     font-size: 14px; /* Smaller font size */
+    font-weight: bold;
     text-decoration: none;
     text-align: center;
-    background-color: #fbde8f;
-    color: #0f2557;
+    background-color: #2b5463;
+    color: #fbde8f;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -51,7 +58,9 @@ html, body {
 }
 
 .back-button:hover {
-    background-color: #dcd2cf;
+    background-color: #dcc7aa;
+    color: #2b5463;
+    border: 0.5px solid #2b5463;
 }
 
 .form-group {
@@ -63,6 +72,7 @@ html, body {
 }
 
 .form-group label {
+    color: #6b7a8f;
     margin-bottom: 5px;
     font-weight: bold;
     text-align: center;
@@ -71,7 +81,7 @@ html, body {
 .form-group input {
     width: 90%;
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 0.5px solid #2b5463;
     border-radius: 4px;
     margin: 0 auto;
     display: block;
@@ -80,17 +90,26 @@ html, body {
 button {
     width: 90%;
     padding: 10px;
-    background-color: #fbde8f;
-    color: #0f2557;
+    background-color: #2b5463;
+    color: #fbde8f;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     margin-top: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
     background-color: #dcd2cf;
+    color: #2b5463;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgb(43, 84, 99);
 }
+
 
 .links {
     text-align: center;
@@ -103,7 +122,7 @@ button:hover {
 
 .links a {
     text-decoration: none;
-    color: #0f2557;
+    color: #2b5463;
 }
 
 .links a:hover {
@@ -131,7 +150,7 @@ footer {
 }
 
 footer a {
-    color: #0f2557;
+    color: #2b5463;
     margin: 0 10px;
     text-decoration: none;
     font-size: 16px;
