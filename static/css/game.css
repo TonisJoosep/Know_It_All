@@ -1,6 +1,6 @@
 /* General styles */
 body {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Raleway', sans-serif;
     margin: 0;
     padding: 0;
     background: #dcd2cf;
@@ -39,7 +39,7 @@ body {
     max-width: 900px;
     max-height: 250px;
     color: #6b7a8f;
-    text-shadow: 1px 0px 1px rgb(15, 37, 87);
+    text-shadow: 1px 0px 1px rgb(43, 84, 99);
     font-size: 24px;
     text-align: center;
     margin-bottom: 40px;
@@ -56,12 +56,12 @@ body {
 /* Answer buttons */
 .answers-container button {
     background: #fbde8f;
-    color: #0f2557;
+    color: #2b5463;
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
     padding: 15px 30px;
-    border: 1px solid #0f2557;
+    border: 0.5px solid #2b5463;
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Glowing shadow */
@@ -71,7 +71,7 @@ body {
 }
 
 .answers-container button:hover {
-    background: linear-gradient(135deg, #00509e, #0077c2); /* Brighten on hover */
+    background: #dcd2cf;
     transform: translateY(-5px); /* Lift effect */
     box-shadow: 0 10px 20px rgba(255, 215, 0, 0.7); /* Gold glow on hover */
 }
@@ -83,12 +83,12 @@ body {
 
 /* Results container */
 #results-container {
-    background: rgba(0, 51, 102, 0.8);
-    border: 3px solid #ffd700;
+    background: rgb(251, 222, 143);
+    border: 0.5px solid #2b5463;
     border-radius: 15px;
     padding: 20px;
     margin-top: 20px;
-    color: #ffffff;
+    color: #2b5463;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     font-size: 22px;
     display: none; /* Hidden by default */
@@ -97,7 +97,7 @@ body {
 #results-container h2 {
     font-size: 28px;
     margin-bottom: 10px;
-    color: #ffd700;
+    color: #2b5463;
 }
 
 /* Buttons container */
@@ -109,19 +109,19 @@ body {
 }
 
 .buttons-container button {
-    background: #ffd700;
+    background: #fbde8f;
     color: #2b5463;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
     padding: 10px 20px;
-    border: none;
+    border: 0.5px solid #2b5463;
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .buttons-container button:hover {
-    background: #f1c40f;
+    background: #dcd2cf;
     transform: translateY(-2px);
 }
 
