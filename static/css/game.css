@@ -128,26 +128,11 @@ body {
 .buttons-container button:active {
     transform: translateY(1px);
 }
+header {
+    width: 97.89vw;
+}
 footer {
-    background-color: #6b7a8f;
-    color: #6b7a8f;
-    padding: 5px 0;
-    margin-top: 30px;
-    text-align: center;
-    position: relative; /* Ensures footer doesn't overlap game-container */
-    width: 100%; /* Footer spans the full width */
-}
-
-footer a {
-    color: #2b5463;
-    margin: 0 10px;
-    text-decoration: none;
-    font-size: 15px;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: #dcd2cf;
+    width: 100vw;
 }
 /* Mobile responsiveness */
 @media (max-width: 768px) {
