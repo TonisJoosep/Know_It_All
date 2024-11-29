@@ -43,17 +43,19 @@ form select, form button {
     width: 100%;
     padding: 8px;
     margin-bottom: 15px;
-    border: 1px solid #0f2557;
+    border: 1px solid #2b5463;
     border-radius: 5px;
 }
 .options-page button {
-    background-color: #fbde8f;
-    color: #0f2557;
+    background-color: #2b5463;
+    color: #fbde8f;
     font-weight: bold;
     cursor: pointer;
 }
 
 .options-page button:hover {
     background-color: #dcd2cf;
-
+    color: #2b5463;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgb(43, 84, 99);
 }
