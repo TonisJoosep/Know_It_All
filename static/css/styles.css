@@ -19,7 +19,7 @@ html, body {
 header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+
     background-color: #6b7a8f;
     color: #6b7a8f;
     padding: 10px 20px;
@@ -33,6 +33,8 @@ header .user-actions {
     display: flex;
     align-items: center;
     gap: 15px;
+    margin-left: auto; /* This will push the user actions (including the login button) to the right */
+    position: relative; /* Allow absolute positioning for children if needed */
 }
 
 header #username {
