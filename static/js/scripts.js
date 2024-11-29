@@ -34,24 +34,28 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function handleAnswerClick(selectedAnswer) {
-        const questionData = questions[currentQuestionIndex];
+    const questionData = questions[currentQuestionIndex];
 
-        if (selectedAnswer === questionData.correct_answer) {
-            score += 10;
-        }
-
-        currentQuestionIndex++;
-        if (currentQuestionIndex < questions.length) {
-            showQuestion(currentQuestionIndex);
-        } else {
-            // Show results
-            const finalScore = score * multiplier;
-            scoreSpan.textContent = finalScore.toFixed(0)
-            questionContainer.style.display = 'none';
-            resultsContainer.style.display = 'block';
-            buttonsContainer.style.display = 'block';
-        }
+    if (selectedAnswer === questionData.correct_answer) {
+        score += 10;
     }
+
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        showQuestion(currentQuestionIndex);
+    } else {
+        // Show results
+        const finalScore = score * multiplier;
+        scoreSpan.textContent = finalScore.toFixed(0);
+        questionContainer.style.display = 'none';
+        resultsContainer.style.display = 'block';
+        buttonsContainer.style.display = 'block';
+
+        // Save the score to the database
+        saveScoreToDatabase(finalScore);
+    }
+}
+
     replayButton.addEventListener('click', () => {
         currentQuestionIndex = 0;
         score = 0;
@@ -64,3 +68,44 @@ document.addEventListener('DOMContentLoaded', function () {
     // Show the first question initially
     showQuestion(currentQuestionIndex);
 });
+function saveScoreToDatabase(finalScore) {
+    const dataContainer = document.getElementById('data-container');
+    const category = dataContainer.dataset.category;  // Fetch category
+    const difficulty = dataContainer.dataset.difficulty;  // Fetch difficulty
+
+    fetch('/save-score/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCSRFToken(), // Include CSRF token
+        },
+        body: JSON.stringify({
+            score: finalScore,
+            category: category,
+            difficulty: difficulty,
+        })
+    })
+    .then(response => {
+    console.log('Response status:', response.status);
+    return response.json();
+})
+.then(data => {
+    console.log('Response data:', data);
+})
+.catch(error => {
+    console.error('Error:', error);
+});
+}
+
+// Helper function to get the CSRF token
+function getCSRFToken() {
+    const cookies = document.cookie.split(';');
+    for (const cookie of cookies) {
+        const [name, value] = cookie.trim().split('=');
+        if (name === 'csrftoken') {
+            return value;
+        }
+    }
+    return '';
+}
+

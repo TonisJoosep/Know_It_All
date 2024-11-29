@@ -23,3 +23,14 @@ class Game(models.Model):
 
     def __str__(self):
         return f'{self.category} - {self.difficulty} - {self.user}'
+
+
+class GameHistory(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    category = models.CharField(max_length=64, null=True, blank=True)
+    difficulty = models.CharField(choices=DIFFICULTY_CHOICES.items(), max_length=16)
+    score = models.IntegerField(default=0)
+    date_played = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.user.username} - {self.category} - {self.difficulty} - {self.score} on {self.date_played}"

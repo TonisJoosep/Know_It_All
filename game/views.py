@@ -6,6 +6,11 @@ from .forms import LoginForm
 from .api.client import get_questions
 from .api.category import MAIN_CATEGORIES, get_main_categories, get_subcategories
 import random
+import json
+from django.contrib.auth.decorators import login_required
+from.models import GameHistory
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
 
 
 def index(request):
@@ -34,7 +39,7 @@ def options(request, category_name):
     }
     return render(request, 'options.html', context)
 
-
+@login_required
 def game(request):
     '''
     Renderdab mängu lehe (game.html).
@@ -166,3 +171,33 @@ def contact(request):
 
 def privacy(request):
     return render(request, 'privacy.html')
+
+
+@login_required  # Ensure only authenticated users can save their scores
+@csrf_exempt
+def save_score(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            category = data.get('category')
+            difficulty = data.get('difficulty')
+            score = data.get('score')
+
+            # Save the game history
+            GameHistory.objects.create(
+                user=request.user,
+                category=category,
+                difficulty=difficulty,
+                score=score,
+            )
+            return JsonResponse({'message': 'Score saved successfully!'}, status=200)
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=400)
+    else:
+        return JsonResponse({'error': 'Invalid request method'}, status=400)
+
+
+@login_required
+def leaderboard(request):
+    scores = GameHistory.objects.filter(user=request.user).order_by('-score')[:10]  # Top 10 scores for the user
+    return render(request, 'leaderboard.html', {'scores': scores})
