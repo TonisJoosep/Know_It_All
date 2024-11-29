@@ -1,25 +1,56 @@
-{% extends 'base.html' %}
-
+{{% extends 'base.html' %}
+{% load static %}
 {% block title %}Welcome - Know_It_All{% endblock %}
 
 {% block content %}
-<body>
-<div><b>LOGO</b></div>
-<form class='signup-form' action='/register/' method='POST'>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <form class='signup-form' action='/register/' method='POST'>
     {% csrf_token %}
-    <label for='name'>First and last name:</label>
-    <input type='text' id='name' name='name' required>
-    <br>
-    <label for='email'>E-mail:</label>
-    <input type='email' id='email' name='email' required>
-    <br>
-    <label for='password'>Password:</label>
-    <input type='password' id='password' name='password' required>
-    <br>
-    <label for='confirm_password'>Confirm Password:</label>
-    <input type='password' id='confirm_password' name='confirm_password' required>
-
-    <button type='submit' class='register-button'>Register</button>
-</form>
-</body>
+    
+    <div class="content">
+        <div class="card-container">
+            <div class="card">
+                <h2 class="card-title">Sign Up</h2>
+                <form method="post">
+                    
+                    
+                    <div class="form-group">
+                        <label for="name">Username</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="confirm_password">Confirm password</label>
+                        <input type="password" id="confirm_password" name="confirm_password" required>
+                    </div>
+                
+    
+                    {% if form.non_field_errors %}
+                    <div class="error">
+                        <ul>
+                            {% for error in form.non_field_errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                    
+                    <div class="links">
+                        <button type="submit" class="register-button">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
 {% endblock %}
