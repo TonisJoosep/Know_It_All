@@ -1,52 +1,54 @@
-.topic-container {
+/* Apply styles only inside .options-page */
+.options-page .topic-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
 }
 
-.topic-header {
+.options-page .topic-header {
     text-align: center;
 }
 
-.topic-image {
+.options-page .topic-image {
     width: 150px;
     height: auto;
     margin-bottom: 5px;
-    margin-top: 40px
+    margin-top: 40px;
 }
 
-.topic-name {
+.options-page .topic-name {
     color: #6b7a8f;
     font-size: 24px;
     font-weight: bold;
-    margin-bottom : 20px;
+    margin-bottom: 20px;
 }
 
-.options-container {
+.options-page .options-container {
     width: 100%;
     max-width: 400px;
     margin: 20px 0;
 }
 
-.options-container h3 {
+.options-page .options-container h3 {
     margin-bottom: 10px;
 }
 
-form label {
+.options-page form label {
     display: block;
     margin-bottom: 5px;
     margin-top: 5px;
 }
 
-form select, form button {
+.options-page form select, .options-page button {
     width: 100%;
     padding: 8px;
     margin-bottom: 15px;
     border: 1px solid #2b5463;
     border-radius: 5px;
 }
-.options-page button {
+
+.options-page form button {
     background-color: #2b5463;
     color: #fbde8f;
     font-weight: bold;
