@@ -55,8 +55,9 @@ body {
 
 /* Answer buttons */
 .answers-container button {
-    background: #fbde8f;
+
     color: #2b5463;
+    background-color: #f9dc8e;
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
@@ -70,17 +71,34 @@ body {
     max-width: 300px; /* Limit maximum button width */
 }
 
-.answers-container button:hover {
-    background: #dcd2cf;
+
+
+/* Hover effect */
+.answers-container button:hover:not(.btn-success):not(.btn-danger) {
+    background: #dcd2cf; /* Hover background color */
     transform: translateY(-5px); /* Lift effect */
     box-shadow: 0 10px 20px rgba(255, 215, 0, 0.7); /* Gold glow on hover */
 }
 
+
+/* When answer is selected */
+.answers-container button.btn-success {
+    background-color: rgba(86, 156, 86, 0.75);
+    color: white;
+    box-shadow: 0 0 15px 5px rgba(106, 237, 106, 0.7); /* Green glow for correct answer */
+}
+
+.answers-container button.btn-danger {
+    background-color: #d36455;
+    color: white;
+    box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.7); /* Red glow for incorrect answer */
+}
+
+/* Active effect (pressed state) */
 .answers-container button:active {
     transform: translateY(1px); /* Pressed effect */
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
 }
-
 /* Results container */
 #results-container {
     background: rgb(251, 222, 143);

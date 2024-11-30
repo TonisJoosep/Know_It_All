@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let score = 0;
     const difficulty = document.getElementById('data-container').dataset.difficulty; // Get difficulty
     const multiplier = parseFloat(document.getElementById('data-container').dataset.multiplier);
-
     const questionContainer = document.getElementById('question-container');
     const answersContainer = document.getElementById('answers-container');
     const nextButton = document.getElementById('next-button');
@@ -33,27 +32,47 @@ document.addEventListener('DOMContentLoaded', function () {
         nextButton.style.display = 'none'; // Hide the next button initially
     }
 
-    function handleAnswerClick(selectedAnswer) {
+   function handleAnswerClick(selectedAnswer) {
     const questionData = questions[currentQuestionIndex];
+    const answerButtons = document.querySelectorAll('.answer-button');
+    const correctAnswer = questionData.correct_answer;
 
-    if (selectedAnswer === questionData.correct_answer) {
-        score += 10;
-    }
+    // Find the button the user clicked
+    const selectedButton = Array.from(answerButtons).find(button => button.textContent === selectedAnswer);
 
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-        showQuestion(currentQuestionIndex);
+    // Disable all buttons to prevent multiple clicks
+    answerButtons.forEach(button => button.disabled = true);
+
+    // Highlight selected answer based on correctness
+    if (selectedAnswer === correctAnswer) {
+        selectedButton.classList.add('btn-success');
+        score += 10; // Increment score only if the answer is correct
     } else {
-        // Show results
-        const finalScore = score * multiplier;
-        scoreSpan.textContent = finalScore.toFixed(0);
-        questionContainer.style.display = 'none';
-        resultsContainer.style.display = 'block';
-        buttonsContainer.style.display = 'block';
-
-        // Save the score to the database
-        saveScoreToDatabase(finalScore);
+        selectedButton.classList.add('btn-danger');
+        // Highlight the correct answer in green
+        const correctButton = Array.from(answerButtons).find(button => button.textContent === correctAnswer);
+        correctButton.classList.add('btn-success');
     }
+
+    selectedButton.offsetHeight;
+
+    // Delay before moving to the next question or showing results
+    setTimeout(() => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+            showQuestion(currentQuestionIndex);
+        } else {
+            // Show final results
+            const finalScore = score * multiplier;
+            scoreSpan.textContent = finalScore.toFixed(0);
+            questionContainer.style.display = 'none';
+            resultsContainer.style.display = 'block';
+            buttonsContainer.style.display = 'block';
+
+            // Save the score to the database
+            saveScoreToDatabase(finalScore);
+        }
+    }, 1500); //
 }
 
     replayButton.addEventListener('click', () => {
