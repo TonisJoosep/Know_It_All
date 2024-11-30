@@ -6,9 +6,9 @@ from know_it_all.settings import API_URL
 logger = logging.getLogger(__name__)
 
 def get_questions(amount, category=None, difficulty=None):
-    '''
+    """
     Tõmbab küsimused API-st.
-    '''
+    """
     try:
         params = {
             'amount': amount,

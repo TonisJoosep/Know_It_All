@@ -3,17 +3,17 @@
 
 <head>
     {% load static %}
-    <meta charset="UTF-8">
+    <meta charset='UTF-8'>
     <title>{% block title %}Know_It_All{% endblock %}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-    <link rel='stylesheet' href="{% static 'css/styles.css' %}">
+    <link href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@400;700&display=swap' rel='stylesheet'>
+    <link rel='stylesheet' href='{% static 'css/styles.css' %}'>
     <link rel='icon' type='image/x-icon' href="{% static 'favicon.ico' %}">
 </head>
 <body>
 
 {% if show_header != False %}
 <header>
-    <a href="{% url 'index' %}">
+    <a href='{% url 'index' %}'>
         <img src='/static/logo1.png' alt='Trivia Game Logo' id='logo'>
     </a>
     
@@ -25,7 +25,7 @@
                 <button type='submit' id='logout-button'>Logout</button>
             </form>
         {% else %}
-            <form method='post' action="{% url 'login' %}" style='display: inline;'>
+            <form method='post' action='{% url 'login' %}' style='display: inline;'>
                 {% csrf_token %}
                 <button type='submit' id='login-button'>Login</button>
                 
@@ -39,9 +39,9 @@
 </header>
 {% endif %}
 {% if messages %}
-        <ul class="messages">
+        <ul class='messages'>
             {% for message in messages %}
-                <li class="{{ message.tags }}">{{ message }}</li>
+                <li class='{{ message.tags }}'>{{ message }}</li>
             {% endfor %}
         </ul>
 {% endif %}
@@ -53,9 +53,9 @@
 {% if show_footer != False %}
 <footer>
     <div class='container'>
-        <a href="{% url 'about' %}">About Us</a>
-        <a href="{% url 'contact' %}">Contact</a>
-        <a href="{% url 'privacy' %}">Privacy Policy</a>
+        <a href='{% url 'about' %}'>About Us</a>
+        <a href='{% url 'contact' %}'>Contact</a>
+        <a href='{% url 'privacy' %}'>Privacy Policy</a>
     </div>
 </footer>
 {% endif %}

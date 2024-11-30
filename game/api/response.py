@@ -1,7 +1,7 @@
 class Response(Exception):
-    '''
+    """
     Custom class for handling API responses.
-    '''
+    """
 
     SUCCESS = 0  # Returned results successfully.
     NO_RESULTS = 1  # Could not return results. ...

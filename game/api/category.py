@@ -30,13 +30,13 @@ MAIN_CATEGORIES = {
 }
 
 def get_main_categories():
-    '''
+    """
     Tagastab peamiste kategooriate nimekirja.
-    '''
+    """
     return list(MAIN_CATEGORIES.keys())
 
 def get_subcategories(category_name):
-    '''
+    """
     Tagastab alamkategooriate loendi antud peakategooria jaoks.
-    '''
+    """
     return MAIN_CATEGORIES.get(category_name, {})
