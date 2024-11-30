@@ -7,7 +7,7 @@
     <title>{% block title %}Know_It_All{% endblock %}</title>
     <link href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@400;700&display=swap' rel='stylesheet'>
     <link rel='stylesheet' href='{% static 'css/styles.css' %}'>
-    <link rel='icon' type='image/x-icon' href="{% static 'favicon.ico' %}">
+    <link rel='icon' type='image/x-icon' href='{% static 'favicon.ico' %}'>
 </head>
 <body>
 
@@ -26,7 +26,7 @@
             </form>
         {% else %}
 
-            <form method='post' action="{% url 'login' %}">
+            <form method='post' action='{% url 'login' %}'>
  main
                 {% csrf_token %}
                 <button type='submit' id='login-button'>Login</button>

@@ -33,4 +33,4 @@ class GameHistory(models.Model):
     date_played = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.user.username} - {self.category} - {self.difficulty} - {self.score} on {self.date_played}"
+        return f'{self.user.username} - {self.category} - {self.difficulty} - {self.score} on {self.date_played}'
