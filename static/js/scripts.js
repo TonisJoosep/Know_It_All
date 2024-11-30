@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
             saveScoreToDatabase(finalScore);
         }
         // 0 just for testing, don't forget to change this back to 1500 after testing
-    }, 0); //
+    }, 2000); //
 }
 
     replayButton.addEventListener('click', () => {

@@ -44,6 +44,11 @@ header #username {
     color: #2b5463;
 }
 
+header #username:hover {
+    font-size: 17px;
+    color: #dcd2cf;
+}
+
 header button {
     background-color: #fbde8f;
     color: rgb(43, 84, 99);
@@ -191,6 +196,7 @@ footer a:hover {
     }
 }
 
+
 /* Dropdown Button */
 .dropdown {
     position: relative;
@@ -258,3 +264,4 @@ footer a:hover {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+

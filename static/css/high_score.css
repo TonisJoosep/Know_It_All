@@ -1,27 +1,16 @@
 /* General Styles */
 .highscore body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Raleway', sans-serif;
     background-color: #f9f9f9;
-    color: #333;
+    color: #2b5463;
     margin: 0;
     padding: 20px;
-}
-
-.highscore a {
-    text-decoration: none;
-    color: #007BFF;
-    font-weight: bold;
-}
-
-.highscore a:hover {
-    color: #0056b3;
-    text-decoration: underline;
 }
 
 /* Header Styles */
 .highscore h1 {
     text-align: center;
-    color: #444;
+    color: #6b7a8f;
     margin-bottom: 20px;
 }
 
@@ -30,15 +19,16 @@
     width: 100%;
     border-collapse: collapse;
     margin: 20px auto;
-    background-color: #fff;
+    background-color: #dcd2cf;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
+    max-width: 900px;
 }
 
 .highscore thead {
-    background-color: #007BFF;
-    color: #fff;
+    background-color: #2b5463;
+    color: #fbde8f;
 }
 
 .highscore thead th {
@@ -48,15 +38,15 @@
 }
 
 .highscore tbody tr {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid rgba(221, 221, 221, 0.13);
 }
 
 .highscore tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #fbde8f;
 }
 
 .highscore tbody tr:hover {
-    background-color: #f1f1f1;
+    background-color: rgba(241, 241, 241, 0.72);
 }
 
 .highscore tbody td {
@@ -80,19 +70,4 @@
     .highscore thead th, .highscore tbody td {
         padding: 10px;
     }
-}
-
-/* Back to Homepage Link */
-.highscore a {
-    display: inline-block;
-    margin-bottom: 20px;
-    padding: 10px 15px;
-    background-color: #007BFF;
-    color: #fff;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.highscore a:hover {
-    background-color: #0056b3;
 }
