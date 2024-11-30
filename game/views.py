@@ -140,8 +140,8 @@ def register_view(request):
 
 def login_view(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
+        username = request.POST.get('username')
+        password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
         if user:
             login(request, user)
@@ -196,11 +196,11 @@ def save_score(request):
 
 @login_required
 def high_score(request):
-    scores = GameHistory.objects.filter(user=request.user).order_by('-score')[:10]  # Top 10 scores for the user
+    scores = GameHistory.objects.filter(user=request.user).order_by('-score')[:10]
     return render(request, 'high_score.html', {'scores': scores})
 
 
 
 def leaderboard(request):
-    scores = GameHistory.objects.order_by('-score')[:10]  # Top 10 scores for any user
+    scores = GameHistory.objects.order_by('-score')[:10]
     return render(request, 'leaderboard.html', {'scores': scores})
