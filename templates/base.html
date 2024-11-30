@@ -16,29 +16,34 @@
     <a href='{% url 'index' %}'>
         <img src='/static/logo1.png' alt='Trivia Game Logo' id='logo'>
     </a>
-    
+
     <div class='user-actions'>
         {% if user.is_authenticated %}
             <span id='username'>Welcome, {{ user.username }}</span>
-            <form method='post' action="{% url 'logout' %}">
-                {% csrf_token %}
-                <button type='submit' id='logout-button'>Logout</button>
-            </form>
-        {% else %}
 
+            <!-- Dropdown Menu -->
+            <div class="dropdown">
+                <button class="dropdown-btn">Menu</button>
+                <div class="dropdown-content">
+                    <a href="{% url 'high_score' %}">My Best Results</a>
+                    <a href="{% url 'leaderboard' %}">Leaderboard</a>
+                    <a href="{% url 'index' %}">Back to Homepage</a>
+                    <!-- Logout button inside the dropdown -->
+                    <form method='post' action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button type='submit' id='logout-button' class="dropdown-item">Logout</button>
+                    </form>
+                </div>
+            </div>
+        {% else %}
             <form method='post' action='{% url 'login' %}'>
- main
                 {% csrf_token %}
                 <button type='submit' id='login-button'>Login</button>
-                
             </form>
         {% endif %}
-        <button><a href='{% url 'high_score' %}'>My Best Results</a></button>
-        <button><a href='{% url 'leaderboard' %}'>Leaderboard</a></button>
-        <button><a href='{% url 'index' %}'>Back to Homepage</a></button>
-        
     </div>
 </header>
+
 {% endif %}
 {% if messages %}
         <ul class='messages'>
