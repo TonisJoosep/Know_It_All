@@ -6,9 +6,7 @@
             <th>Category</th>
             <th>Difficulty</th>
             <th>Score</th>
-            <th>User</th>
             <th>Date Played</th>
-            
         </tr>
     </thead>
     <tbody>
@@ -18,7 +16,6 @@
             <td>{{ score.category|default:"N/A" }}</td>
             <td>{{ score.difficulty }}</td>
             <td>{{ score.score }}</td>
-            <td>{{ score.user }}</td>
             <td>{{ score.date_played|date:"Y-m-d H:i" }}</td>
         </tr>
         {% endfor %}

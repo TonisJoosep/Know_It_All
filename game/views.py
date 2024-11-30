@@ -14,23 +14,23 @@ from django.http import JsonResponse
 
 
 def index(request):
-    '''
+    """
     Renderdab avalehe (index.html).
 
     See vaade tõmbab peakategooriad ja edastab need mallile.
-    '''
+    """
     categories = get_main_categories()
     context = {'categories': categories}
     return render(request, 'index.html', context)
 
 
 def options(request, category_name):
-    '''
+    """
     Renderdab valikute lehe (options.html).
 
     See vaade tõmbab alamkategooriad (kui need on olemas)
     ja edastab need koos muude valikutega mallile.
-    '''
+    """
     subcategories = get_subcategories(category_name) or {}
     context = {
         'category_name': category_name,
@@ -41,12 +41,12 @@ def options(request, category_name):
 
 @login_required
 def game(request):
-    '''
+    """
     Renderdab mängu lehe (game.html).
 
     See vaade tõmbab küsimused API-st vastavalt kasutaja
     valikutele ja edastab need mallile.
-    '''
+    """
     category_name = request.GET.get('category')
     subcategory_name = request.GET.get('subcategory')
     difficulty = request.GET.get('difficulty')
@@ -84,7 +84,7 @@ def game(request):
 
         total_score = 0
         for question in questions:
-            if 'user_answer' in question and question['user_answer'] == question['correct_answer']:
+            if 'user_answer' in question and question.get('user_answer') == question.get('correct_answer'):
                 total_score += 10
         total_score *= multiplier
         context = {
@@ -92,6 +92,7 @@ def game(request):
             'total_score': total_score,
             'difficulty': difficulty,
             'multiplier': multiplier,
+            'category': category_name,
         }
         return render(request, 'game.html', context)
 
@@ -173,7 +174,7 @@ def privacy(request):
     return render(request, 'privacy.html')
 
 
-@login_required  # Ensure only authenticated users can save their scores
+@login_required
 @csrf_exempt
 def save_score(request):
     if request.method == 'POST':
@@ -193,11 +194,16 @@ def save_score(request):
             return JsonResponse({'message': 'Score saved successfully!'}, status=200)
         except Exception as e:
             return JsonResponse({'error': str(e)}, status=400)
-    else:
-        return JsonResponse({'error': 'Invalid request method'}, status=400)
+    return JsonResponse({'error': 'Invalid request method'}, status=400)
 
 
 @login_required
-def leaderboard(request):
+def high_score(request):
     scores = GameHistory.objects.filter(user=request.user).order_by('-score')[:10]  # Top 10 scores for the user
+    return render(request, 'high_score.html', {'scores': scores})
+
+
+
+def leaderboard(request):
+    scores = GameHistory.objects.order_by('-score')[:10]  # Top 10 scores for any user
     return render(request, 'leaderboard.html', {'scores': scores})
