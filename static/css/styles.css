@@ -57,7 +57,9 @@ header button {
 header button:hover {
     background-color: #dcd2cf;
 }
-
+form {
+    display: inline;
+}
 main {
     flex: 1;
     padding: 24px;

@@ -3,43 +3,47 @@
 {% block title %}Welcome - Know_It_All{% endblock %}
 
 {% block content %}
-    <link rel='stylesheet' href='{% static 'css/options.css' %}'>
-    <div class='topic-container'>
-        <div class='topic-header'>
-            <img src='{% static 'categories/' %}{{ category_name|lower }}.png' alt='{{ category_name }} Icon'
-                 class='topic-image'>
-            <h2 class='topic-name'>{{ category_name }}</h2>
-        </div>
 
-        <form method='get' action="{% url 'game' %}">
-            {% if subcategories and subcategories|length > 0 %}
-                <label for='subcategory'>Subcategory:</label>
-                <select name='subcategory' id='subcategory'>
-                    {% for subcategory_name, subcategory_id in subcategories.items %}
-                        <option value="{{ subcategory_name }}">{{ subcategory_name }}</option>
+    <link rel="stylesheet" href="{% static 'css/options.css' %}">
+    <div class="options-page">
+        <div class="topic-container">
+            <div class="topic-header">
+                <img src="{% static 'categories/' %}{{ category_name|lower }}.png" alt="{{ category_name }} Icon"
+                     class="topic-image">
+                <h2 class="topic-name">{{ category_name }}</h2>
+            </div>
+
+            <form method='get' action="{% url 'game' %}">
+                {% if subcategories and subcategories|length > 0 %}
+                    <label for='subcategory'>Subcategory:</label>
+                    <select name='subcategory' id='subcategory'>
+                        {% for subcategory_name, subcategory_id in subcategories.items %}
+                            <option value="{{ subcategory_name }}">{{ subcategory_name }}</option>
+                        {% endfor %}
+                    </select>
+                {% endif %}
+
+
+                <input type='hidden' name='category' value="{{ category_name }}">
+
+                <label for='difficulty'>Difficulty:</label>
+                <select name='difficulty' id='difficulty'>
+                    {% for choice in difficulty_choices %}
+                        <option value="{{ choice }}">{{ choice|capfirst }}</option>
                     {% endfor %}
                 </select>
-            {% endif %}
+                <label for='amount'>Number of Questions:</label>
+                <select id='amount' name='amount'>
+                    <option value='1' selected>1</option>
+                    <option value='5'>5</option>
+                    <option value='10'>10</option>
+                    <option value='15'>15</option>
+                </select>
 
-            <input type='hidden' name='category' value='{{ category_name }}'>
-
-            <label for='difficulty'>Difficulty:</label>
-            <select name='difficulty' id='difficulty'>
-                {% for choice in difficulty_choices %}
-                    <option value='{{ choice }}'>{{ choice|capfirst }}</option>
-                {% endfor %}
-            </select>
-            <label for='amount'>Number of Questions:</label>
-            <select id='amount' name='amount'>
-                <option value='1' selected>1</option>
-                <option value='5'>5</option>
-                <option value='10'>10</option>
-                <option value='15'>15</option>
-            </select>
-
-    <div class='options-page'>
-        <button type='submit'>Start Game</button>
-    </div>
-        </form>
+                <div class="options-page">
+                    <button type="submit">Start Game</button>
+                </div>
+            </form>
+        </div>
     </div>
 {% endblock %}

@@ -21,16 +21,15 @@
             {% endfor %}
         </div>
 
-
-        <button id='next-button' style='display: none;'>Next Question</button>
+    
     </div>
 
-    <div id='results-container' style='display: none;'>
+    <div id='results-container'>
         <h2>Results</h2>
         <p>Your total score (multiplied by difficulty): <span id='score'>{{ total_score }}</span></p>
         <p>Difficulty Multiplier: <span id='multiplier'>{{ multiplier }}x</span></p>
     </div>
-    <div class='buttons-container' style='display: none;' id='game-buttons-container'>
+    <div class='buttons-container' id='game-buttons-container'>
         <button id='replay-button'>Replay</button>
         <a href='/' id='home-button' class='button'><button>Back to Home Page</button></a>
     </div>

@@ -20,12 +20,14 @@
     <div class='user-actions'>
         {% if user.is_authenticated %}
             <span id='username'>Welcome, {{ user.username }}</span>
-            <form method='post' action="{% url 'logout' %}" style='display: inline;'>
+            <form method='post' action="{% url 'logout' %}">
                 {% csrf_token %}
                 <button type='submit' id='logout-button'>Logout</button>
             </form>
         {% else %}
-            <form method='post' action='{% url 'login' %}' style='display: inline;'>
+
+            <form method='post' action="{% url 'login' %}">
+ main
                 {% csrf_token %}
                 <button type='submit' id='login-button'>Login</button>
                 
