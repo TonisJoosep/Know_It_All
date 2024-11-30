@@ -28,8 +28,13 @@
             <form method='post' action="{% url 'login' %}" style='display: inline;'>
                 {% csrf_token %}
                 <button type='submit' id='login-button'>Login</button>
+                
             </form>
         {% endif %}
+        <button><a href='{% url 'high_score' %}'>My Best Results</a></button>
+        <button><a href='{% url 'leaderboard' %}'>Leaderboard</a></button>
+        <button><a href='{% url 'index' %}'>Back to Homepage</a></button>
+        
     </div>
 </header>
 {% endif %}
