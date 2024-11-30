@@ -128,19 +128,18 @@ Here’s a sneak peek of the game in action:
 
 🖥️ Home Page
 
-![]() (./demo.png)
+![Home Page Screenshot](readme_images/demo.png)
 
 
 📊 Results Page
 
-![demo image] (./demo2.png)
-
-![demo image] (./demo3.png)
+![Home Page Screenshot](readme_images/demo2.png)
 
 
 ❓ Question Interface
+![Home Page Screenshot](readme_images/demo3.png)
 
-![demo image] (./demo4.png)
+![Home Page Screenshot](readme_images/demo4.png)
 
 ### 🤝 Meet the Team
 We’re a small but mighty team, united by a shared passion for creativity, coding, and making people smile.
