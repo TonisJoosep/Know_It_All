@@ -14,4 +14,7 @@ urlpatterns = [
     path('contact', views.contact, name='contact'),
     path('privacy', views.privacy, name='privacy'),
     path('signup/' , views.signup, name='signup'),
+    path('save-score/', views.save_score, name='save_score'),
+    path('high_score/', views.high_score, name='high_score'),
+    path('leaderboard/', views.leaderboard, name='leaderboard'),
 ]

@@ -20,7 +20,7 @@
             <button>{{ Option | safe }}</button>
             {% endfor %}
         </div>
-        
+
 
         <button id='next-button' style='display: none;'>Next Question</button>
     </div>
@@ -38,7 +38,10 @@
          data-questions='{{ questions|safe }}'
          data-total-score='{{ total_score }}'
          data-multiplier='{{ multiplier }}'
-         data-correct-answers-count='{{ correct_answers_count }}'>
+         data-category='{{ category }}'
+         data-difficulty='{{ difficulty }}'
+         data-correct-answers-count='{{ correct_answers_count }}'
+         data-user='{{ user|safe }}'>
     </div>
     <div id="data-container" data-questions='{{ questions|safe }}'></div>
     <script>
