@@ -1,0 +1,98 @@
+/* General Styles */
+.leaderboard-page body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.leaderboard-page a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.leaderboard-page a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Header Styles */
+.leaderboard-page h1 {
+    text-align: center;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+/* Table Styles */
+.leaderboard-page table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.leaderboard-page thead {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.leaderboard-page thead th {
+    padding: 15px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.leaderboard-page tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.leaderboard-page tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.leaderboard-page tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.leaderboard-page tbody td {
+    padding: 12px 15px;
+    font-size: 14px;
+    text-align: left;
+}
+
+.leaderboard-page tbody td:nth-child(1) {
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .leaderboard-page table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .leaderboard-page thead th, .leaderboard-page tbody td {
+        padding: 10px;
+    }
+}
+
+/* Back to Homepage Link */
+.leaderboard-page a {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.leaderboard-page a:hover {
+    background-color: #0056b3;
+}
