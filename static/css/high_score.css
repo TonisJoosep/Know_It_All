@@ -1,5 +1,5 @@
 /* General Styles */
-body {
+.highscore body {
     font-family: 'Arial', sans-serif;
     background-color: #f9f9f9;
     color: #333;
@@ -7,26 +7,26 @@ body {
     padding: 20px;
 }
 
-a {
+.highscore a {
     text-decoration: none;
     color: #007BFF;
     font-weight: bold;
 }
 
-a:hover {
+.highscore a:hover {
     color: #0056b3;
     text-decoration: underline;
 }
 
 /* Header Styles */
-h1 {
+.highscore h1 {
     text-align: center;
     color: #444;
     margin-bottom: 20px;
 }
 
 /* Table Styles */
-table {
+.highscore table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px auto;
@@ -36,54 +36,54 @@ table {
     overflow: hidden;
 }
 
-thead {
+.highscore thead {
     background-color: #007BFF;
     color: #fff;
 }
 
-thead th {
+.highscore thead th {
     padding: 15px;
     text-align: left;
     font-size: 16px;
 }
 
-tbody tr {
+.highscore tbody tr {
     border-bottom: 1px solid #ddd;
 }
 
-tbody tr:nth-child(even) {
+.highscore tbody tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-tbody tr:hover {
+.highscore tbody tr:hover {
     background-color: #f1f1f1;
 }
 
-tbody td {
+.highscore tbody td {
     padding: 12px 15px;
     font-size: 14px;
     text-align: left;
 }
 
-tbody td:nth-child(1) {
+.highscore tbody td:nth-child(1) {
     font-weight: bold;
     text-align: center;
 }
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-    table {
+    .highscore table {
         width: 100%;
         font-size: 14px;
     }
 
-    thead th, tbody td {
+    .highscore thead th, .highscore tbody td {
         padding: 10px;
     }
 }
 
 /* Back to Homepage Link */
-a {
+.highscore a {
     display: inline-block;
     margin-bottom: 20px;
     padding: 10px 15px;
@@ -93,6 +93,6 @@ a {
     transition: background-color 0.3s ease;
 }
 
-a:hover {
+.highscore a:hover {
     background-color: #0056b3;
 }

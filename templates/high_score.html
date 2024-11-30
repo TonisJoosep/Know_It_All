@@ -1,24 +1,33 @@
-<a href='{% url 'index' %}'>Back to Homepage</a>
-<h1>Game History</h1>
-<table>
-    <thead>
-        <tr>
-            <th>Rank</th>
-            <th>Category</th>
-            <th>Difficulty</th>
-            <th>Score</th>
-            <th>Date Played</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for score in scores %}
-        <tr>
-            <td>{{ forloop.counter }}</td>
-            <td>{{ score.category|default:'N/A' }}</td>
-            <td>{{ score.difficulty }}</td>
-            <td>{{ score.score }}</td>
-            <td>{{ score.date_played|date:'Y-m-d H:i' }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Welcome - Know_It_All{% endblock %}
+
+{% block content %}
+    <link rel='stylesheet' href="{% static 'css/high_score.css' %}">
+    <div class='highscore'>
+    
+    <h1>Game History</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Category</th>
+                    <th>Difficulty</th>
+                    <th>Score</th>
+                    <th>Date Played</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for score in scores %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ score.category|default:'N/A' }}</td>
+                    <td>{{ score.difficulty }}</td>
+                    <td>{{ score.score }}</td>
+                    <td>{{ score.date_played|date:'Y-m-d H:i' }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+{% endblock %}
