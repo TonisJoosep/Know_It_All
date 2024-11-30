@@ -52,10 +52,7 @@ def game(request):
     difficulty = request.GET.get('difficulty')
     amount = request.GET.get('amount')
 
-    if not amount:
-        amount = 10
-    else:
-        amount = int(amount)
+    amount = int(amount) if amount else 10
 
     if subcategory_name:
         category_id = MAIN_CATEGORIES.get(category_name, {}).get(subcategory_name)
@@ -105,9 +102,9 @@ def login_user(request):
 
 
 def forgot_password(request):
-    if request.method == "POST":
-        request.POST.get("email")
-        messages.success(request, "Password reset email has been sent.")
+    if request.method == 'POST':
+        request.POST.get('email')
+        messages.success(request, 'Password reset email has been sent to administrator')
         return redirect('index')
     return render(request, 'forgot_password.html')
 
@@ -128,11 +125,11 @@ def register_view(request):
         confirm_password = request.POST.get('confirm_password')
 
         if password != confirm_password:
-            messages.error(request, "Password doesn't match.")
+            messages.error(request, 'Password does not match.')
             return redirect('signup')
 
         if User.objects.filter(email=email).exists():
-            messages.error(request, "Email already registered.")
+            messages.error(request, 'Email already registered.')
             return redirect('signup')
         username = name
         User.objects.create_user(username=username, email=email, password=password)

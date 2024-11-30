@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log(questions); // Pass questions from Django context
     let currentQuestionIndex = 0;
     let score = 0;
-    const difficulty = document.getElementById('data-container').dataset.difficulty; // Get difficulty
     const multiplier = parseFloat(document.getElementById('data-container').dataset.multiplier);
     const questionContainer = document.getElementById('question-container');
     const answersContainer = document.getElementById('answers-container');
@@ -72,7 +71,8 @@ document.addEventListener('DOMContentLoaded', function () {
             // Save the score to the database
             saveScoreToDatabase(finalScore);
         }
-    }, 1500); //
+        // 0 just for testing, don't forget to change this back to 1500 after testing
+    }, 0); //
 }
 
     replayButton.addEventListener('click', () => {

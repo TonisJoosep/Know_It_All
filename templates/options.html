@@ -3,6 +3,7 @@
 {% block title %}Welcome - Know_It_All{% endblock %}
 
 {% block content %}
+
     <link rel="stylesheet" href="{% static 'css/options.css' %}">
     <div class="options-page">
         <div class="topic-container">
@@ -21,6 +22,7 @@
                         {% endfor %}
                     </select>
                 {% endif %}
+
 
                 <input type='hidden' name='category' value="{{ category_name }}">
 

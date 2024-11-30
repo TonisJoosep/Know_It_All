@@ -4,7 +4,7 @@
 {% block title %}Welcome - Know_It_All{% endblock %}
 
 {% block content %}
-    <link rel="stylesheet" href="{% static 'css/game.css' %}">
+    <link rel='stylesheet' href='{% static 'css/game.css' %}'>
     <body>
 
     <h1>Questions</h1>
@@ -12,7 +12,7 @@
     <div id='question-container'>
         <div class='question' data-question-index='0'></div>
         <br>
-        <div id="answers-container" class="answers-container">
+        <div id='answers-container' class='answers-container'>
             {% for answer in answers %}
             <button>{{ Option | safe }}</button>
             <button>{{ Option | safe }}</button>
@@ -33,7 +33,7 @@
         <button id='replay-button'>Replay</button>
         <a href='/' id='home-button' class='button'><button>Back to Home Page</button></a>
     </div>
-    <div id="data-container"
+    <div id='data-container'
          data-questions='{{ questions|safe }}'
          data-total-score='{{ total_score }}'
          data-multiplier='{{ multiplier }}'
@@ -42,7 +42,7 @@
          data-correct-answers-count='{{ correct_answers_count }}'
          data-user='{{ user|safe }}'>
     </div>
-    <div id="data-container" data-questions='{{ questions|safe }}'></div>
+    <div id='data-container' data-questions='{{ questions|safe }}'></div>
     <script>
         const questions = {{ questions|safe }}; // Pass data from Django context
     </script>
