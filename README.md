@@ -38,21 +38,34 @@ Follow all these steps :
 ### Installation
 1. Clone the Repository:
 git clone https://github.com/TonisJoosep/Know_It_All
-2. Set Up the Environment:
-Create a virtual environment and activate it: 
+2. Set Up the Environment: 
 
-   python -m venv env
+   Create a virtual environment and activate it: 
 
-   source env/bin/activate  # On Windows: env\Scripts\activate 
+   `python -m venv venv`
+
+   source 
+## Activating the Virtual Environment
+
+Once the virtual environment is created, activate it using the appropriate command for your operating system:
+
+- **Mac and Linux Users**. 
+Run the following command in your terminal:
+  ```bash
+  source .venv/bin/activate
+- **Windows Users**. 
+Run the following command in your terminal:
+  ```bash
+  .venv\Scripts\activate
 
 3. Install Dependencies:
 
    Install the necessary Python packages using:
    
-   pip install -r requirements.txt
+   `pip install -r requirements.txt`
 4. Database
 
-Use MySQL or PostgreSQL (recommended for Mac users) as database. 
+   Use MySQL or PostgreSQL (recommended for Mac users) as database. 
 
 You need to create .env file with these values:
 
@@ -75,14 +88,14 @@ You need to create .env file with these values:
 5. Create schema with same name as database (DB_NAME) name
 6. Run Database Migrations:
 
-   python manage.py makemigrations
+   `python manage.py makemigrations`
 
-   python manage.py migrate
+   `python manage.py migrate`
 7. Run the Development Server: 
 
    Start the Django server:
 
-   python manage.py runserver
+   `python manage.py runserver`
 8. Launch the Server:
 
    Open your browser and go to: 'http://127.0.0.1:8000'
@@ -91,30 +104,30 @@ You need to create .env file with these values:
 
 ### How to Play the Trivia Game 🎮
 1. Create account or login if you have registered yet
-2. Choose a Topic: Begin by selecting a topic that interests you the most—be it science, history, entertainment, or more!
+2. Choose a Category: Begin by selecting a topic that interests you the most—be it science, history, entertainment, or more!
 3. Choose a Sub-Category 
 4. Choose a Difficulty level - easy, medium or hard
-5. Choose a Number of Questions - 1, 5, 10 or 15
+5. Choose a Number of Questions - 5, 10 or 15
 6. Answer the Questions
 
-   Each question comes with multiple-choice answers.
+- Each question comes with multiple-choice answers.
 
-   Take your time to read the question carefully and click on the answer you think is correct.
+- Take your time to read the question carefully and click on the answer you think is correct.
 
-   Once you select an answer, you are moved automatically to the next question.
+- Once you select an answer, you are moved automatically to the next question.
 7. Difficulty Multiplier
 
-   The difficulty level you choose at the start affects your final score. 
+- The difficulty level you choose at the start affects your final score. 
 
-   The harder the questions, the bigger the score multiplier!
+- The harder the questions, the bigger the score multiplier!
 8. Score and Results
-   After completing the quiz, your total score will be displayed along with a breakdown:
+- After completing the quiz, your total score will be displayed along with a breakdown:
 
-   Your correct answers
+- Your correct answers
 
-   The difficulty multiplier
+- The difficulty multiplier
 
-   Your final score
+- Your final score
 9. Replay, explore another topic or Challenge Friends
 
    Love the experience? Hit the Replay button to improve your score, or invite friends to test their knowledge too!
@@ -136,7 +149,8 @@ Here’s a sneak peek of the game in action:
 ![Home Page Screenshot](readme_images/demo2.png)
 
 
-❓ Question Interface
+❓ Questions Interface
+
 ![Home Page Screenshot](readme_images/demo3.png)
 
 ![Home Page Screenshot](readme_images/demo4.png)
@@ -144,13 +158,13 @@ Here’s a sneak peek of the game in action:
 ### 🤝 Meet the Team
 We’re a small but mighty team, united by a shared passion for creativity, coding, and making people smile.
 
-Tõnis: The strategist who kept us on track and glued all the project together
+**Tõnis**: The strategist who kept us on track and glued all the project together.
 
-Victoria: The artistic eye behind the sleek design.
+**Victoria**: The artistic eye behind the sleek design.
 
-Rauno: Our tech wizard who turned ideas into reality.
+**Rauno**: Our tech wizard who turned ideas into reality.
 
-Sirli: The cheerleader and motivator, a person who also dived into the backend, exploring its intricacies and contributing valuable insights that elevated the project.
+**Sirli**: The cheerleader and motivator, a person who also dived into the backend, exploring its intricacies and contributing valuable insights that elevated the project.
 
 We all learned something new while building Know_It_All, and we couldn’t be prouder of the result!
 
@@ -165,13 +179,14 @@ Feel free to reach out:
 This project is powered by the creativity, skills, and enthusiasm of a dedicated team. 
 
 It all wouldn’t have been possible without:
-Endless cups of coffee ☕, huge amounts of canned food🥫, cookies🍪 and fresh fruits🍏
+- Endless cups of coffee ☕, huge amounts of canned food🥫, cookies🍪 and fresh fruits🍏
 
-Countless brainstorming sessions 🤯
+- Countless brainstorming sessions 🤯
 
-The unwavering support of our trainer Vladislavs and our families!
+- The unwavering support of our trainer [Vladislavs](https://www.linkedin.com/in/vladislavsb/)
+ and our families!
 
-To everyone who believed in us and tested the game—thank you! 
+- To everyone who believed in us and tested the game—thank you! 
 
 You’re part of what makes this special.
 
