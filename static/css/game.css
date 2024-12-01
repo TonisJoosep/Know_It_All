@@ -83,15 +83,15 @@ body {
 
 /* When answer is selected */
 .answers-container button.btn-success {
-    background-color: rgb(0, 177, 57);
+    background-color: rgba(0, 177, 50, 0.42);
     color: #fbde8f;
-    box-shadow: 0 0 15px 5px rgba(106, 237, 106, 0.7); /* Green glow for correct answer */
+    box-shadow: 0 0 15px 5px rgba(51, 135, 51, 0.4); /* Green glow for correct answer */
 }
 
 .answers-container button.btn-danger {
-    background-color: rgb(220, 20, 60);
+    background-color: rgba(230, 115, 136, 0.73);
     color: #fbde8f;
-    box-shadow: 0 0 15px 5px rgb(239, 22, 79); /* Red glow for incorrect answer */
+    box-shadow: 0 0 15px 5px rgba(239, 22, 79, 0.38); /* Red glow for incorrect answer */
 }
 
 /* Active effect (pressed state) */
